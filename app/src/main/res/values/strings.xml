@@ -3,6 +3,18 @@
     <string name="app_name">IN_box.ua</string>
 
     <!-- Bottom navigation -->
-    <string name="preferences">Likes</string>
+    <string name="bn_user_area">User</string>
+    <string name="bn_catalog">Catalog</string>
+    <string name="bn_trash">Trash</string>
+    <string name="bn_favorites">Preferences</string>
+    <string name="bn_other">Other</string>
+
+
+    <string name="title">Мрноговразовая маска ааві  авіао</string>
+    <string name="price">450 грн.</string>
+    <string name="category">Шапки, шарфы, курточки</string>
+    <string name="add_to_cart">ДОБАВИТЬ В КОРЗИНУ</string>
+
+
     <!-- other some function -->
 </resources>
