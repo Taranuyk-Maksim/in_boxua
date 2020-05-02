@@ -1,28 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/menu_user_area"
-        android:icon="@android:drawable/btn_minus"
-        android:title="@string/bn_user_area"
-        />
-    <item
         android:id="@+id/menu_catalog"
-        android:icon="@android:drawable/btn_minus"
+        android:icon="@drawable/ic_menu_catalog"
         android:title="@string/bn_catalog"
         />
     <item
         android:id="@+id/menu_trash"
-        android:icon="@android:drawable/btn_minus"
+        android:icon="@drawable/ic_menu_shopping_cart"
         android:title="@string/bn_trash"
         />
     <item
         android:id="@+id/menu_favorites"
-        android:icon="@android:drawable/btn_minus"
+        android:icon="@drawable/ic_menu_favorite"
         android:title="@string/bn_favorites"
-        />
-    <item
-        android:id="@+id/menu_other"
-        android:icon="@android:drawable/btn_minus"
-        android:title="@string/bn_other"
         />
 </menu>

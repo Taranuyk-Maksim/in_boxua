@@ -3,4 +3,13 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="colorTextTitle">#000000</color>
+    <color name="colorTextDescription">#E9000000</color>
+    <color name="colorPrice">#D50000</color>
+
+    <color name="headerColor">#E6E6E6</color>
+    <color name="colorSizeElement">#FF8A65</color>
+
+    <color name="colorButtonAddToCard">#4CAF65</color>
 </resources>

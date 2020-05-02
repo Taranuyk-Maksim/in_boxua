@@ -3,9 +3,110 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/headerColor</item>
+        <item name="colorPrimaryDark">#FFFFFF</item>
+        <item name="colorAccent">#4CAF50</item>
+    </style>
+    
+    <!-- Text style    -->
+    <style name="TextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
+    <style name="TextStyle.Title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/colorTextTitle</item>
+    </style>
+    <style name="TextStyle.Title.Head">
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <style name="TextStyle.Price">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/colorPrice</item>
+    </style>
+    <style name="TextStyle.Title.Title2">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="TextStyle.Title.Card">
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="TextStyle.Price.Card">
+        <item name="android:textSize">15sp</item>
+    </style>
+    <style name="TextStyle.Category">
+        <item name="android:textColor">@color/colorTextDescription</item>
+    </style>
+
+    <style name="TextStyle.Button">
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="TextStyle.Description">
+        <item name="android:textColor">@color/colorTextDescription</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextStyle.SizeElement">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:textSize">25sp</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textColor">@color/colorSizeElement</item>
+    </style>
+
+    <!--Theme Style-->
+    <style name="AppStyle">
+
+    </style>
+
+    <style name="AppStyle.Header">
+        <item name="android:background">@color/headerColor</item>
+    </style>
+    
+    <!-- Buttons-->
+    <style name="Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Button.AddToCard">
+        <item name="background">@color/colorButtonAddToCard</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Button.FullScreen">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/background_stroke</item>
+        <item name="android:drawableRight">@drawable/ic_chevron_right_black_24dp</item>
+        <item name="android:drawableEnd">@drawable/ic_chevron_right_black_24dp</item>
+        <item name="android:textSize">14sp</item>
+
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+    <style name="BottomNavigation">
+        <item name="android:background">@drawable/background_stroke</item>
+    </style>
+    <style name="SearchView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/background_stroke</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
 </resources>

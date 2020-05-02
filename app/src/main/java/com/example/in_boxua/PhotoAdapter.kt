@@ -21,7 +21,7 @@ class PhotoAdapter (private val list: List<Int>) : RecyclerView.Adapter<PhotoAda
     override fun onBindViewHolder(holder: PhotoHolder, position: Int) {
          holder.photo?.setImageResource(list[position])
     }
-    class PhotoHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+     class PhotoHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var photo : ImageView? = null
         init{
             photo = itemView.findViewById(R.id.iv_photo)

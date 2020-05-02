@@ -1,51 +1,52 @@
 package com.example.in_boxua
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MainActivity : AppCompatActivity() {
+
+class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_catalog)
-        val rw : RecyclerView = findViewById(R.id.rv_list_goods)
-       // val rv : RecyclerView = findViewById(R.id.rw_recomend)
-//        rv.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        rw.layoutManager = GridLayoutManager(this,2)
+        setContentView(R.layout.activity_main)
+        //loading the default fragment
 
-//        val list : ArrayList<Int> = ArrayList()
-//        list.add(R.drawable.snekers_photo)
-//        list.add(R.drawable.snekers_photo)
-//        list.add(R.drawable.snekers_photo)
-//        list.add(R.drawable.snekers_photo)
-//        list.add(R.drawable.snekers_photo)
-//        list.add(R.drawable.snekers_photo)
-//        list.add(R.drawable.snekers_photo)
+        //loading the default fragment
+        loadFragment(CatalogFragment())
 
-        val list2 : ArrayList<GoodsView> = ArrayList()
-        list2.add(GoodsView("fdskljf f dsfjds fdsjk","500"))
-        list2.add(GoodsView("fdskljf f dsfjds fdsjk","500"))
-        list2.add(GoodsView("fdskljf f dsfjds fdsjk","500"))
-        list2.add(GoodsView("fdskljf f dsfjds fdsjk","500"))
-        list2.add(GoodsView("fdskljf f dsfjds fdsjk","500"))
-        list2.add(GoodsView("fdskljf f dsfjds fdsjk","500"))
-        list2.add(GoodsView("fdskljf f dsfjds fdsjk","500"))
-        list2.add(GoodsView("fdskljf f dsfjds fdsjk","500"))
-        list2.add(GoodsView("fdskljf f dsfjds fdsjk","500"))
-        list2.add(GoodsView("fdskljf f dsfjds fdsjk","500"))
-        list2.add(GoodsView("fdskljf f dsfjds fdsjk","500"))
-        list2.add(GoodsView("fdskljf f dsfjds fdsjk","500"))
-        list2.add(GoodsView("fdskljf f dsfjds fdsjk","500"))
-        list2.add(GoodsView("fdskljf f dsfjds fdsjk","500"))
-        list2.add(GoodsView("fdskljf f dsfjds fdsjk","500"))
-        list2.add(GoodsView("fdskljf f dsfjds fdsjk","500"))
-        list2.add(GoodsView("fdskljf f dsfjds fdsjk","500"))
-        list2.add(GoodsView("fdskljf f dsfjds fdsjk","500"))
+        //getting bottom navigation view and attaching the listener
 
+        //getting bottom navigation view and attaching the listener
+        val navigation: BottomNavigationView = findViewById(R.id.bottomNavigationView)
+        navigation.setOnNavigationItemSelectedListener(this)
+    }
 
-      //  rv.adapter = GoodsAdapter(list2)
-        rw.adapter = GoodsAdapter(list2)
+    private fun loadFragment(fragment: Fragment?): Boolean {
+        //switching fragment
+        if (fragment != null) {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fl_fragment_container, fragment)
+                .commit()
+            return true
+        }
+        return false
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        var fragment : Fragment? = null
+
+        when (item.itemId) {
+            R.id.menu_catalog ->
+                fragment = CatalogFragment()
+            R.id.menu_favorites ->
+                fragment = FavoritesFragment()
+            R.id.menu_trash ->
+                fragment = CartFragment()
+        }
+        return loadFragment(fragment);
     }
 }
