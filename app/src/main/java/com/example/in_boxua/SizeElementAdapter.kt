@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class SizeElementAdapter(private val sizeList: ArrayList<String>): RecyclerView.Adapter<SizeElementAdapter.SizeElementHolder>(){
+class SizeElementAdapter(private val sizeList: List<String>): RecyclerView.Adapter<SizeElementAdapter.SizeElementHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SizeElementHolder {
         val itemVIew = LayoutInflater.from(parent.context).inflate(R.layout.size_element,parent,false)
@@ -22,7 +22,7 @@ class SizeElementAdapter(private val sizeList: ArrayList<String>): RecyclerView.
     inner class SizeElementHolder(item : View) : RecyclerView.ViewHolder(item){
         var text : TextView? = null
         init {
-            text =  item.findViewById(R.id.rv_sizes)
+            text =  item.findViewById(R.id.tv_size_element)
         }
     }
 }

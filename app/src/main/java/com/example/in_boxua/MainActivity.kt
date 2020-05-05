@@ -39,13 +39,19 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         var fragment : Fragment? = null
 
+        var arra = arrayListOf<Goods>(
+            Goods("230432",234),
+            Goods("230432",234),
+            Goods("230432",234),
+            Goods("230432",234)
+        )
         when (item.itemId) {
             R.id.menu_catalog ->
                 fragment = CatalogFragment()
             R.id.menu_favorites ->
                 fragment = FavoritesFragment()
             R.id.menu_trash ->
-                fragment = CartFragment()
+                fragment = CartFragment(arra)
         }
         return loadFragment(fragment);
     }

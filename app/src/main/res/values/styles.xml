@@ -46,6 +46,7 @@
 
     <style name="TextStyle.Button">
         <item name="textAllCaps">true</item>
+        <item name="android:textSize">17sp</item>
     </style>
 
     <style name="TextStyle.Description">
@@ -54,12 +55,13 @@
     </style>
 
     <style name="TextStyle.SizeElement">
-        <item name="android:layout_marginLeft">10dp</item>
-        <item name="android:layout_marginRight">10dp</item>
-        <item name="android:textSize">25sp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:textSize">20sp</item>
         <item name="textAllCaps">true</item>
         <item name="android:textColor">@color/colorSizeElement</item>
     </style>
+
 
     <!--Theme Style-->
     <style name="AppStyle">
@@ -67,7 +69,7 @@
     </style>
 
     <style name="AppStyle.Header">
-        <item name="android:background">@color/headerColor</item>
+        <item name="android:background">#E6FFFFFF</item>
     </style>
     
     <!-- Buttons-->
@@ -82,6 +84,7 @@
     <style name="Button.AddToCard">
         <item name="background">@color/colorButtonAddToCard</item>
         <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#ffffff</item>
     </style>
 
     <style name="Button.FullScreen">

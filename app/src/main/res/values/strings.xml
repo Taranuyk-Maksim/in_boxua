@@ -17,6 +17,7 @@
     <string name="price">450 грн.</string>
     <string name="category">Шапки, шарфы, курточки</string>
     <string name="add_to_cart">ДОБАВИТЬ В КОРЗИНУ</string>
+    <string name="fragmentCart">Корзина</string>
 
     <!-- other some function -->
 </resources>
