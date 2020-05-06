@@ -21,6 +21,7 @@ class GoodsAdapter(private val goods : List<Goods>) : RecyclerView.Adapter<Goods
         holder.bind(goods[position])
     }
 
+
    inner class GoodsHolder(private val binding: GoodsCardBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Goods){
             binding.goods = item

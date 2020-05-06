@@ -5,6 +5,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+        <import type="com.example.in_boxua.R" />
         <variable
             name="goods"
             type="com.example.in_boxua.Goods" />
@@ -24,6 +25,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="5dp"
             app:cardCornerRadius="5dp"
+            android:onClick="@{(view)->model.open(view)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -85,14 +87,14 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:background="@drawable/background_stroke"
-                    android:onClick="@{(view)->model.addToFavorite(view)}"
+                    android:onClick="@{()->model.addToFavorite()}"
                     app:layout_constraintBottom_toBottomOf="@+id/iv_photo"
                     app:layout_constraintEnd_toEndOf="@+id/iv_photo"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/iv_photo"
                     app:layout_constraintTop_toTopOf="@+id/iv_photo"
                     app:layout_constraintVertical_bias="0.0"
-                    app:srcCompat="@drawable/ic_favorite_border"
+                    app:srcCompat="@{goods.isFavorites() ? goods.r : goods.b }"
                     tools:ignore="VectorDrawableCompat" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

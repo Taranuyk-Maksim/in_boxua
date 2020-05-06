@@ -27,19 +27,28 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         R.drawable.snekers_photo,
         R.drawable.snekers_photo
     )
+    val disct : String  = "Практичная, лёгкая панама от Staff для туризма и повседневной жизни, которая защитит от солнца и влаги, а эксклюзивный принт поможет дополнить твой образ.\n" +
+            "\n" +
+            "Материал:\n" +
+            "- прочный, дышащий полиэстер;\n" +
+            "- 70% полиэстер, 30% коттон.\n" +
+            "\n" +
+            "Детали и крой:\n" +
+            "- размер: высота (до козырька) 8 см, длина козырька 6 см, окружность 60 см;\n" +
+            "- классический крой;\n" +
+            "- лента-подкладка на внутренней стороне;\n" +
+            "- четыре вентиляционных отверстия;\n" +
+            "- бирка с фирменным логотипом Staff вшита в шов."
     val listGoo = arrayListOf<Goods>(
-        Goods("Кросовочки ніке",800,sizes,listPho),
-        Goods("Кросовочки ніке",800,sizes,listPho),
-        Goods("Кросовочки ніке",800,sizes,listPho),
-        Goods("Кросовочки ніке",800,sizes,listPho),
-        Goods("Кросовочки ніке",800,sizes,listPho),
-        Goods("Кросовочки ніке",800,sizes,listPho),
-        Goods("Кросовочки ніке",800,sizes,listPho),
-        Goods("Кросовочки ніке",800,sizes,listPho),
-        Goods("Кросовочки ніке",800,sizes,listPho),
-        Goods("Кросовочки ніке",800,sizes,listPho),
-        Goods("Кросовочки ніке",800,sizes,listPho)
-
+        Goods("Кросовочки ніке",800,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800,disct,sizes,listPho)
     )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,13 +76,23 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         var fragment : Fragment? = null
 
         when (item.itemId) {
-            R.id.menu_catalog ->
-                fragment = CatalogFragment(listPho,listGoo)
-            R.id.menu_favorites ->
-                fragment = FavoritesFragment(listGoo)
-            R.id.menu_trash ->
-                fragment = CartFragment(listGoo)
-        }
+                R.id.menu_catalog ->{
+                    fragment = CatalogFragment(listPho,listGoo)
+                }
+                R.id.menu_favorites ->{
+                    fragment = FavoritesFragment(listGoo)
+                }
+                R.id.menu_trash ->{
+                    fragment = CartFragment(listGoo)
+                }
+            }
+
         return loadFragment(fragment);
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fl_fragment_container, fragment)
+        transaction.commit()
     }
 }

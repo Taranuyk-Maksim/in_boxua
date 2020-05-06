@@ -11,6 +11,7 @@ import com.example.in_boxua.*
 import com.example.in_boxua.adapters.GoodsAdapter
 import com.example.in_boxua.adapters.PhotoAdapter
 import com.example.in_boxua.adapters.SizeElementAdapter
+import com.example.in_boxua.databinding.FragmentGoodsBinding
 
 class GoodsFragment(val goods: Goods, val recommendList : List<Goods>) : Fragment() {
     override fun onCreateView(
@@ -22,6 +23,9 @@ class GoodsFragment(val goods: Goods, val recommendList : List<Goods>) : Fragmen
         val view = inflater.inflate(R.layout.fragment_goods,null)
 
         initRecycler(view,goods.photos,recommendList,goods.sizeLIst)
+        val bind : FragmentGoodsBinding = FragmentGoodsBinding.bind(view)
+        bind.goods = goods
+        bind.model = GoodsModel(goods)
 
         return view
     }
