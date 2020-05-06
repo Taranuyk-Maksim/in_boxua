@@ -1,12 +1,11 @@
-package com.example.in_boxua
+package com.example.in_boxua.adapters
 
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.in_boxua.R
 
 class PhotoAdapter (private val list: List<Int>) : RecyclerView.Adapter<PhotoAdapter.PhotoHolder>(){
 

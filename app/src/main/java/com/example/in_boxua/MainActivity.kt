@@ -4,22 +4,49 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import com.example.in_boxua.fragments.CartFragment
+import com.example.in_boxua.fragments.CatalogFragment
+import com.example.in_boxua.fragments.FavoritesFragment
+import com.example.in_boxua.fragments.ResultFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
 
+    val sizes = listOf<String>(
+        "s",
+        "m",
+        "l",
+        "xl",
+        "xxl"
+    )
+    val listPho = listOf(
+        R.drawable.snekers_photo,
+        R.drawable.snekers_photo,
+        R.drawable.snekers_photo,
+        R.drawable.snekers_photo
+    )
+    val listGoo = arrayListOf<Goods>(
+        Goods("Кросовочки ніке",800,sizes,listPho),
+        Goods("Кросовочки ніке",800,sizes,listPho),
+        Goods("Кросовочки ніке",800,sizes,listPho),
+        Goods("Кросовочки ніке",800,sizes,listPho),
+        Goods("Кросовочки ніке",800,sizes,listPho),
+        Goods("Кросовочки ніке",800,sizes,listPho),
+        Goods("Кросовочки ніке",800,sizes,listPho),
+        Goods("Кросовочки ніке",800,sizes,listPho),
+        Goods("Кросовочки ніке",800,sizes,listPho),
+        Goods("Кросовочки ніке",800,sizes,listPho),
+        Goods("Кросовочки ніке",800,sizes,listPho)
+
+    )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //loading the default fragment
 
-        //loading the default fragment
-        loadFragment(CatalogFragment())
+        loadFragment(CatalogFragment(listPho,listGoo))
 
-        //getting bottom navigation view and attaching the listener
-
-        //getting bottom navigation view and attaching the listener
         val navigation: BottomNavigationView = findViewById(R.id.bottomNavigationView)
         navigation.setOnNavigationItemSelectedListener(this)
     }
@@ -39,19 +66,13 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         var fragment : Fragment? = null
 
-        var arra = arrayListOf<Goods>(
-            Goods("230432",234),
-            Goods("230432",234),
-            Goods("230432",234),
-            Goods("230432",234)
-        )
         when (item.itemId) {
             R.id.menu_catalog ->
-                fragment = CatalogFragment()
+                fragment = CatalogFragment(listPho,listGoo)
             R.id.menu_favorites ->
-                fragment = FavoritesFragment()
+                fragment = FavoritesFragment(listGoo)
             R.id.menu_trash ->
-                fragment = CartFragment(arra)
+                fragment = CartFragment(listGoo)
         }
         return loadFragment(fragment);
     }

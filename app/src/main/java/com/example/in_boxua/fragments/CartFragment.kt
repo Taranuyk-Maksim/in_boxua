@@ -1,4 +1,4 @@
-package com.example.in_boxua
+package com.example.in_boxua.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.in_boxua.Goods
+import com.example.in_boxua.adapters.GoodsFoCartAdapter
+import com.example.in_boxua.R
 
 class CartFragment(var goodsList : ArrayList<Goods>) : Fragment() {
     override fun onCreateView(
@@ -25,7 +28,8 @@ class CartFragment(var goodsList : ArrayList<Goods>) : Fragment() {
         val rvListGoods : RecyclerView = view.findViewById(R.id.rv_in_cart)
         //LinearLayout manager not work!к
         rvListGoods.layoutManager = GridLayoutManager(context,1)
-        rvListGoods.adapter = GoodsFoCartAdapter(goods!!)
+        rvListGoods.adapter =
+            GoodsFoCartAdapter(goods!!)
     }
 
     private fun getSumPriceOrders() : Int{

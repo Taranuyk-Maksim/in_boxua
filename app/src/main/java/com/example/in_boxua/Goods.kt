@@ -9,13 +9,14 @@ import androidx.lifecycle.ViewModel
 
 class Goods (
     val title: String,
-    val price: Int
+    val price: Int,
+    val sizeLIst : List<String>,
+    val photos : List<Int>
 ) : ViewModel(){
 
     var quantity : ObservableInt = ObservableInt(1)
     var obsPrice : ObservableInt = ObservableInt(price)
     var isFavorites : ObservableBoolean = ObservableBoolean(false)
 
-    //openBigSize
 
 }
