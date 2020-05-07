@@ -30,7 +30,7 @@ class GoodsFragment(val goods: Goods, val recommendList : List<Goods>) : Fragmen
         return view
     }
 
-    private fun initRecycler(view: View, listPhotos: List<Int>,
+    private fun initRecycler(view: View, listPhotos: List<String>,
                              listRecommendGoods : List<Goods>,
                              listSizes : List<String>){
 

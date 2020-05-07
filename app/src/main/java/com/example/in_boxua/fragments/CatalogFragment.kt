@@ -13,7 +13,7 @@ import com.example.in_boxua.adapters.GoodsAdapter
 import com.example.in_boxua.adapters.PhotoAdapter
 import com.example.in_boxua.R
 
-class CatalogFragment (val newsList: List<Int>,val goodsList: List<Goods>) : Fragment() {
+class CatalogFragment (val newsList: List<String>,val goodsList: List<Goods>) : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -27,7 +27,7 @@ class CatalogFragment (val newsList: List<Int>,val goodsList: List<Goods>) : Fra
         return view
     }
 
-    private fun initRecycler(view: View, newsList: List<Int>, goodsList : List<Goods>){
+    private fun initRecycler(view: View, newsList: List<String>, goodsList : List<Goods>){
         val news : RecyclerView = view.findViewById(R.id.rv_new_goods)
         val listGoods : RecyclerView = view.findViewById(R.id.rv_list_goods)
 

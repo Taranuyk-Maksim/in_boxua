@@ -1,12 +1,23 @@
 package com.example.in_boxua
 
 import android.view.View
-import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.in_boxua.fragments.GoodsFragment
 
 
-class GoodsModel (val goods: Goods)  {
+class GoodsModel ()  {
+
+    lateinit var goods : Goods
+
+    constructor(goods : Goods) : this(){
+        this.goods = goods
+    }
+
+    private var imageUrl : String = ""
+
+    fun setImageUrl(url : String) {
+        imageUrl = url
+    }
 
     fun addToFavorite(){
         if(goods.isFavorites.get()){
@@ -18,13 +29,13 @@ class GoodsModel (val goods: Goods)  {
     //Button plas/minus quantity goods from cart
     fun goodsPlas() {
         goods.quantity.set(goods.quantity.get() + 1)
-        goods.obsPrice.set(goods.obsPrice.get() + goods.price)
+        goods.obsPrice.set(goods.obsPrice.get() + goods.price!!)
     }
 
     fun goodsMinus() {
         if(goods.quantity.get()>1) {
             goods.quantity.set(goods.quantity.get() - 1)
-            goods.obsPrice.set(goods.obsPrice.get() - goods.price)
+            goods.obsPrice.set(goods.obsPrice.get() - goods.price!!)
         }
     }
 
@@ -36,10 +47,11 @@ class GoodsModel (val goods: Goods)  {
         "xxl"
     )
     val listPho = listOf(
-        R.drawable.snekers_photo,
-        R.drawable.snekers_photo,
-        R.drawable.snekers_photo,
-        R.drawable.snekers_photo
+        "https://images.ua.prom.st/1226436357_w640_h640_1226436357.jpg",
+        "https://images.ua.prom.st/1854410440_w640_h640_krossovki-xiaomi-mijia.jpg",
+        "https://krosogolik.com/image/cache/catalog/men-nike/7/281-1000x1340.jpg",
+        "https://golos.ua/images/items/2019-03/14/e5VPi4QzRDkESm9G/image/1.png",
+        "https://golos.ua/images/items/2019-03/14/e5VPi4QzRDkESm9G/image/1.png"
     )
     val disct : String  = "Практичная, лёгкая панама от Staff для туризма и повседневной жизни, которая защитит от солнца и влаги, а эксклюзивный принт поможет дополнить твой образ.\n" +
             "\n" +
@@ -53,6 +65,7 @@ class GoodsModel (val goods: Goods)  {
             "- лента-подкладка на внутренней стороне;\n" +
             "- четыре вентиляционных отверстия;\n" +
             "- бирка с фирменным логотипом Staff вшита в шов."
+
     val listGoo = arrayListOf<Goods>(
         Goods("Кросовочки ніке",800,disct,sizes,listPho),
         Goods("Кросовочки ніке",800,disct,sizes,listPho),
@@ -72,3 +85,4 @@ class GoodsModel (val goods: Goods)  {
             .commit()
     }
 }
+

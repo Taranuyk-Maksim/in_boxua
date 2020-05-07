@@ -4,11 +4,9 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import com.example.in_boxua.fragments.CartFragment
 import com.example.in_boxua.fragments.CatalogFragment
 import com.example.in_boxua.fragments.FavoritesFragment
-import com.example.in_boxua.fragments.ResultFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -22,10 +20,14 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         "xxl"
     )
     val listPho = listOf(
-        R.drawable.snekers_photo,
-        R.drawable.snekers_photo,
-        R.drawable.snekers_photo,
-        R.drawable.snekers_photo
+        "https://golos.ua/images/items/2019-03/14/e5VPi4QzRDkESm9G/image/1.png",
+        "https://golos.ua/images/items/2019-03/14/e5VPi4QzRDkESm9G/image/1.png",
+        "https://golos.ua/images/items/2019-03/14/e5VPi4QzRDkESm9G/image/1.png",
+        "https://golos.ua/images/items/2019-03/14/e5VPi4QzRDkESm9G/image/1.png",
+        "https://golos.ua/images/items/2019-03/14/e5VPi4QzRDkESm9G/image/1.png",
+        "https://golos.ua/images/items/2019-03/14/e5VPi4QzRDkESm9G/image/1.png",
+        "https://golos.ua/images/items/2019-03/14/e5VPi4QzRDkESm9G/image/1.png",
+        "https://golos.ua/images/items/2019-03/14/e5VPi4QzRDkESm9G/image/1.png"
     )
     val disct : String  = "Практичная, лёгкая панама от Staff для туризма и повседневной жизни, которая защитит от солнца и влаги, а эксклюзивный принт поможет дополнить твой образ.\n" +
             "\n" +
