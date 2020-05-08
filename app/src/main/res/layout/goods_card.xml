@@ -5,7 +5,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-        <import type="com.example.in_boxua.R" />
         <variable
             name="goods"
             type="com.example.in_boxua.Goods" />
@@ -74,7 +73,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="8dp"
-                    android:text="@{String.valueOf(goods.price)}"
+                    app:text="@{goods.price}"
+                    app:valuta="@{goods.valuta}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/tv_title"
                     app:layout_constraintHorizontal_bias="0.0"

@@ -13,7 +13,7 @@ import com.example.in_boxua.adapters.PhotoAdapter
 import com.example.in_boxua.adapters.SizeElementAdapter
 import com.example.in_boxua.databinding.FragmentGoodsBinding
 
-class GoodsFragment(val goods: Goods, val recommendList : List<Goods>) : Fragment() {
+class GoodsFragment(val goods: Goods, private val recommendList : List<Goods>) : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

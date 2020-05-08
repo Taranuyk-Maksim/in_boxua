@@ -11,11 +11,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.in_boxua.*
 import com.example.in_boxua.adapters.GoodsFoCartAdapter
+import com.example.in_boxua.databinding.FragmentCartBinding
 
 class CartFragment(var goodsList : ArrayList<Goods>) : Fragment() {
-
-
-    val obsSum = ObservableDouble()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,8 +22,10 @@ class CartFragment(var goodsList : ArrayList<Goods>) : Fragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_cart,null)
-        val text = view.findViewById<TextView>(R.id.tv_sum)
-        text.text = obsSum.get().toString()
+
+        val bind : FragmentCartBinding = FragmentCartBinding.bind(view)
+        bind.setVariable(R.layout.fragment_cart,goodsList[0])
+        bind.goods = goodsList[0]
         initRecyclerInCart(view,goodsList)
         return view
     }

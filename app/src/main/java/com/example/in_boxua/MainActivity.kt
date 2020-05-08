@@ -43,13 +43,11 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             "- лента-подкладка на внутренней стороне;\n" +
             "- четыре вентиляционных отверстия;\n" +
             "- бирка с фирменным логотипом Staff вшита в шов."
+
     val listGoo = arrayListOf<Goods>(
-        Goods("Кросовки Nike 2020",800,disct,sizes,listPho),
-        Goods("Кросовки Nike 2020",800,disct,sizes,listPho),
-        Goods("Кросовки Nike 2020",800,disct,sizes,listPho),
-        Goods("Кросовки Nike 2020",800,disct,sizes,listPho),
-        Goods("Кросовки Nike 2020",800,disct,sizes,listPho),
-        Goods("Кросовки Nike 2020",800,disct,sizes,listPho)
+        Goods("Кросовки Nike 2020",200.0,disct,sizes,listPho),
+        Goods("Кросовки Nike 2020",200.0,disct,sizes,listPho),
+        Goods("Кросовки Nike 2020",200.0,disct,sizes,listPho)
 
     )
     override fun onCreate(savedInstanceState: Bundle?) {

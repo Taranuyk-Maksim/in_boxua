@@ -7,10 +7,16 @@ import com.example.in_boxua.fragments.GoodsFragment
 
 class GoodsModel ()  {
 
+    lateinit var presser : Presser
+
     lateinit var goods : Goods
 
     constructor(goods : Goods) : this(){
         this.goods = goods
+    }
+    constructor(goods : Goods, presser: Presser) : this(){
+        this.goods = goods
+        this.presser = presser
     }
 
     fun addToFavorite(){
@@ -24,12 +30,14 @@ class GoodsModel ()  {
     fun goodsPlas() {
         goods.quantity.set(goods.quantity.get() + 1)
         goods.obsPrice.set(goods.obsPrice.get() + goods.price!!)
+        presser.onPress()
     }
 
     fun goodsMinus() {
         if(goods.quantity.get()>1) {
             goods.quantity.set(goods.quantity.get() - 1)
             goods.obsPrice.set(goods.obsPrice.get() - goods.price!!)
+            presser.onPress()
         }
     }
 
@@ -60,13 +68,23 @@ class GoodsModel ()  {
             "- бирка с фирменным логотипом Staff вшита в шов."
 
     val listGoo = arrayListOf<Goods>(
-        Goods("Кросовочки ніке",800,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800,disct,sizes,listPho)
+        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods("Кросовочки ніке",800.0,disct,sizes,listPho)
+
     )
 
 
