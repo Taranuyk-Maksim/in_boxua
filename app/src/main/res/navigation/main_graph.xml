@@ -26,6 +26,6 @@
         android:label="CartFragment" />
     <fragment
         android:id="@+id/categoryFragment"
-        android:name="CategoryFragment"
+        android:name="com.example.in_boxua.fragments.CategoryFragment"
         android:label="CategoryFragment" />
 </navigation>

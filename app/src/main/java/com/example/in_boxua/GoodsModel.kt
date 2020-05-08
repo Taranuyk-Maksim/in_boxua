@@ -13,12 +13,6 @@ class GoodsModel ()  {
         this.goods = goods
     }
 
-    private var imageUrl : String = ""
-
-    fun setImageUrl(url : String) {
-        imageUrl = url
-    }
-
     fun addToFavorite(){
         if(goods.isFavorites.get()){
             goods.isFavorites.set(false)
@@ -50,7 +44,6 @@ class GoodsModel ()  {
         "https://images.ua.prom.st/1226436357_w640_h640_1226436357.jpg",
         "https://images.ua.prom.st/1854410440_w640_h640_krossovki-xiaomi-mijia.jpg",
         "https://krosogolik.com/image/cache/catalog/men-nike/7/281-1000x1340.jpg",
-        "https://golos.ua/images/items/2019-03/14/e5VPi4QzRDkESm9G/image/1.png",
         "https://golos.ua/images/items/2019-03/14/e5VPi4QzRDkESm9G/image/1.png"
     )
     val disct : String  = "Практичная, лёгкая панама от Staff для туризма и повседневной жизни, которая защитит от солнца и влаги, а эксклюзивный принт поможет дополнить твой образ.\n" +

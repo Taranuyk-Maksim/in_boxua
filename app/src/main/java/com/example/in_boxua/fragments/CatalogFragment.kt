@@ -13,7 +13,7 @@ import com.example.in_boxua.adapters.GoodsAdapter
 import com.example.in_boxua.adapters.PhotoAdapter
 import com.example.in_boxua.R
 
-class CatalogFragment (val newsList: List<String>,val goodsList: List<Goods>) : Fragment() {
+class CatalogFragment (private val newsList: List<String>, private val goodsList: List<Goods>) : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
