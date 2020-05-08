@@ -1,6 +1,7 @@
 package com.example.in_boxua.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,13 +22,18 @@ class GoodsFragment(val goods: Goods, private val recommendList : List<Goods>) :
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_goods,null)
-
+        val handler = Handler1(goods)
         initRecycler(view,goods.photos,recommendList,goods.sizeLIst)
         val bind : FragmentGoodsBinding = FragmentGoodsBinding.bind(view)
         bind.goods = goods
-        bind.model = GoodsModel(goods)
+        bind.model = GoodsModel(goods,handler)
 
         return view
+    }
+    class Handler1(val goods: Goods) : SavesToCart{
+        override fun saveToCart() {
+            DataSingleton.favorites.add(goods)
+        }
     }
 
     private fun initRecycler(view: View, listPhotos: List<String>,

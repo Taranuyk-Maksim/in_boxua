@@ -17,11 +17,12 @@ class Goods(
     var quantity : ObservableInt = ObservableInt(1)
     var obsPrice : ObservableDouble = ObservableDouble(price!!)
     var isFavorites : ObservableBoolean = ObservableBoolean(false)
-    var valuta = " грн"
+    var currency = " грн"
 
     //костиль
     var sumAllGoods: ObservableDouble = ObservableDouble()
     //конець костиля
+
     @DrawableRes val b = R.drawable.ic_favorite_border
     @DrawableRes val r = R.drawable.ic_favorite
 

@@ -8,15 +8,28 @@ import com.example.in_boxua.fragments.GoodsFragment
 class GoodsModel ()  {
 
     lateinit var presser : Presser
+    lateinit var savesToCart: SavesToCart
 
     lateinit var goods : Goods
 
     constructor(goods : Goods) : this(){
         this.goods = goods
     }
-    constructor(goods : Goods, presser: Presser) : this(){
+
+    constructor(goods : Goods,
+                presser: Presser) : this(){
         this.goods = goods
         this.presser = presser
+    }
+
+    constructor(goods : Goods,
+                savesToCart: SavesToCart) : this(){
+        this.goods = goods
+        this.savesToCart = savesToCart
+    }
+
+    fun addToCart(){
+        savesToCart.saveToCart()
     }
 
     fun addToFavorite(){
@@ -84,9 +97,7 @@ class GoodsModel ()  {
         Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
         Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
         Goods("Кросовочки ніке",800.0,disct,sizes,listPho)
-
     )
-
 
     fun open(view: View) {
         val manager = (view.context as AppCompatActivity).supportFragmentManager

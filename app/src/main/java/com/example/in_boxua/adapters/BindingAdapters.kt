@@ -11,8 +11,8 @@ import com.squareup.picasso.Picasso
 fun bindSrcCompat(imageButton: ImageButton?, int: Int) {
     imageButton?.setImageResource(int)
 }
-@BindingAdapter("app:text","app:valuta")
-fun concat(textView: TextView?,price : Double, cur : String) {
+@BindingAdapter("app:text","app:currency")
+fun concat(textView: TextView?,price : Double?, cur : String?) {
     val s : String = "$price"+ cur
     textView?.text = s
 }
