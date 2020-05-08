@@ -5,5 +5,9 @@ interface Presser{
 }
 
 interface SavesToCart{
-    fun saveToCart()
+    fun toCart()
+}
+
+interface AddsToFavorites {
+    fun toFavorite()
 }

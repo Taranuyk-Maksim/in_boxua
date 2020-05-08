@@ -6,6 +6,6 @@ object DataSingleton{
 
     val sumAllGoodsInCart = ObservableDouble()
 
-    val favorites : ArrayList<Goods> = ArrayList()
+    val inCart : ArrayList<Goods> = ArrayList()
 
 }

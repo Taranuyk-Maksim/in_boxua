@@ -3,9 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <variable
-            name="handler"
-            type="com.example.in_boxua.Handler" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -76,7 +74,6 @@
                     style="@style/Button.FullScreen"
                     android:layout_marginBottom="10dp"
                     android:text="@string/bt_categories"
-                    android:onClick="@{(view)->handler.openCatalog(view)}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

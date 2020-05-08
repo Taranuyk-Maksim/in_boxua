@@ -7,6 +7,7 @@ import androidx.databinding.ObservableInt
 import androidx.lifecycle.ViewModel
 
 class Goods(
+    val id : Int,
     val title: String?,
     val price: Double?,
     val description: String?,
@@ -18,10 +19,6 @@ class Goods(
     var obsPrice : ObservableDouble = ObservableDouble(price!!)
     var isFavorites : ObservableBoolean = ObservableBoolean(false)
     var currency = " грн"
-
-    //костиль
-    var sumAllGoods: ObservableDouble = ObservableDouble()
-    //конець костиля
 
     @DrawableRes val b = R.drawable.ic_favorite_border
     @DrawableRes val r = R.drawable.ic_favorite

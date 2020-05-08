@@ -1,7 +1,6 @@
 package com.example.in_boxua.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,10 +11,11 @@ import com.example.in_boxua.*
 import com.example.in_boxua.adapters.GoodsFoCartAdapter
 import com.example.in_boxua.databinding.FragmentCartBinding
 
-class CartFragment() : Fragment(){
+class CartFragment: Fragment(){
 
-    var goodsList = DataSingleton.favorites
-    val handler = Handler(goodsList)
+    private var goodsList = DataSingleton.inCart
+    val handler = Handler()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -24,9 +24,11 @@ class CartFragment() : Fragment(){
 
         val view = inflater.inflate(R.layout.fragment_cart,null)
 
-        initBinding(view)
-        initRecyclerInCart(view,goodsList)
-        initSum()
+        if (DataSingleton.inCart.isEmpty()) {
+        } else {
+            initRecyclerInCart(view,goodsList)
+            initBinding(view)
+        }
         return view
     }
 
@@ -34,7 +36,6 @@ class CartFragment() : Fragment(){
         val bind : FragmentCartBinding = FragmentCartBinding.bind(view)
         bind.setVariable(R.layout.fragment_cart,goodsList[0])
         bind.goods = goodsList[0]
-
     }
 
     private fun initSum() {
@@ -51,17 +52,8 @@ class CartFragment() : Fragment(){
         rvListGoods.layoutManager = GridLayoutManager(context,1)
         rvListGoods.adapter =
             GoodsFoCartAdapter(goods!!,handler)
+        initSum()
     }
 
 
-    class Handler(private val goodsList: ArrayList<Goods>) : Presser{
-
-        override fun onPress() {
-            var sum : Double = 0.0
-            for (g in goodsList) {
-                sum += g.obsPrice.get()
-            }
-            DataSingleton.sumAllGoodsInCart.set(sum)
-        }
-    }
 }

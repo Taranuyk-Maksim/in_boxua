@@ -29,7 +29,7 @@ class GoodsModel ()  {
     }
 
     fun addToCart(){
-        savesToCart.saveToCart()
+        savesToCart.toCart()
     }
 
     fun addToFavorite(){
@@ -81,22 +81,22 @@ class GoodsModel ()  {
             "- бирка с фирменным логотипом Staff вшита в шов."
 
     val listGoo = arrayListOf<Goods>(
-        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800.0,disct,sizes,listPho),
-        Goods("Кросовочки ніке",800.0,disct,sizes,listPho)
+        Goods(1,"Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods(2,"Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods(2,"Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods(2,"Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods(2,"Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods(2,"Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods(2,"Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods(2,"Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods(2,"Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods(2,"Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods(2,"Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods(2,"Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods(2,"Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods(2,"Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods(2,"Кросовочки ніке",800.0,disct,sizes,listPho),
+        Goods(2,"Кросовочки ніке",800.0,disct,sizes,listPho)
     )
 
     fun open(view: View) {

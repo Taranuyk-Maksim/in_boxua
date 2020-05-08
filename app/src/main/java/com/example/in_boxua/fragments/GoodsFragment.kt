@@ -1,7 +1,6 @@
 package com.example.in_boxua.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,8 +30,8 @@ class GoodsFragment(val goods: Goods, private val recommendList : List<Goods>) :
         return view
     }
     class Handler1(val goods: Goods) : SavesToCart{
-        override fun saveToCart() {
-            DataSingleton.favorites.add(goods)
+        override fun toCart() {
+            DataSingleton.inCart.add(goods)
         }
     }
 

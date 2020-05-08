@@ -45,9 +45,9 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             "- бирка с фирменным логотипом Staff вшита в шов."
 
     val listGoo = arrayListOf<Goods>(
-        Goods("Кросовки Nike 2020",200.0,disct,sizes,listPho),
-        Goods("Кросовки Nike 2020",200.0,disct,sizes,listPho),
-        Goods("Кросовки Nike 2020",200.0,disct,sizes,listPho)
+        Goods(1,"Кросовки Nike 2020",200.0,disct,sizes,listPho),
+        Goods(2,"Кросовки Nike 2020",200.0,disct,sizes,listPho),
+        Goods(3,"Кросовки Nike 2020",200.0,disct,sizes,listPho)
 
     )
     override fun onCreate(savedInstanceState: Bundle?) {
