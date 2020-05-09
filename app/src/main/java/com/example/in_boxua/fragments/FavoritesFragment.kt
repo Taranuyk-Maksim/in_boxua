@@ -13,7 +13,7 @@ import com.example.in_boxua.adapters.GoodsAdapter
 import com.example.in_boxua.adapters.PhotoAdapter
 import com.example.in_boxua.adapters.SizeElementAdapter
 
-class FavoritesFragment (private val favoritesGoods: List<Goods>) : Fragment() {
+class FavoritesFragment () : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -22,7 +22,7 @@ class FavoritesFragment (private val favoritesGoods: List<Goods>) : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_favorites,null)
 
-        initRecycler(view,favoritesGoods)
+        initRecycler(view,DataSingleton.inFavorites)
 
         return view
     }

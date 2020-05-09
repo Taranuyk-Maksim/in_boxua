@@ -9,5 +9,5 @@ interface SavesToCart{
 }
 
 interface AddsToFavorites {
-    fun toFavorite()
+    fun toFavorite(isFavorites : Boolean)
 }

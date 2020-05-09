@@ -3,6 +3,8 @@ package com.example.in_boxua.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.in_boxua.AddsToFavorites
+import com.example.in_boxua.DataSingleton
 import com.example.in_boxua.Goods
 import com.example.in_boxua.GoodsModel
 import com.example.in_boxua.databinding.GoodsCardBinding
@@ -22,9 +24,21 @@ class GoodsAdapter(private val goods : List<Goods>) : RecyclerView.Adapter<Goods
     }
 
    inner class GoodsHolder(private val binding: GoodsCardBinding) : RecyclerView.ViewHolder(binding.root) {
+
         fun bind(item: Goods){
+            val isFavorites = Handler2(item)
             binding.goods = item
-            binding.model = GoodsModel(item)
+            binding.model = GoodsModel(item,isFavorites)
+        }
+    }
+}
+
+class Handler2(val goods: Goods) : AddsToFavorites {
+    override fun toFavorite(isFavorites: Boolean) {
+        if(isFavorites){
+            DataSingleton.inFavorites.add(goods)
+        }else{
+            DataSingleton.inFavorites.remove(goods)
         }
     }
 }

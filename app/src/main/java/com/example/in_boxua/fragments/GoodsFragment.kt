@@ -14,6 +14,7 @@ import com.example.in_boxua.adapters.SizeElementAdapter
 import com.example.in_boxua.databinding.FragmentGoodsBinding
 
 class GoodsFragment(val goods: Goods, private val recommendList : List<Goods>) : Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -21,11 +22,12 @@ class GoodsFragment(val goods: Goods, private val recommendList : List<Goods>) :
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_goods,null)
-        val handler = Handler1(goods)
+
         initRecycler(view,goods.photos,recommendList,goods.sizeLIst)
+
         val bind : FragmentGoodsBinding = FragmentGoodsBinding.bind(view)
         bind.goods = goods
-        bind.model = GoodsModel(goods,handler)
+        bind.model = GoodsModel(goods)
 
         return view
     }
@@ -33,6 +35,7 @@ class GoodsFragment(val goods: Goods, private val recommendList : List<Goods>) :
         override fun toCart() {
             DataSingleton.inCart.add(goods)
         }
+
     }
 
     private fun initRecycler(view: View, listPhotos: List<String>,

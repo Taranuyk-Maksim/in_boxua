@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                     fragment = CatalogFragment(listPho,listGoo)
                 }
                 R.id.menu_favorites ->{
-                    fragment = FavoritesFragment(listGoo)
+                    fragment = FavoritesFragment()
                 }
                 R.id.menu_trash ->{
                     fragment = CartFragment()
