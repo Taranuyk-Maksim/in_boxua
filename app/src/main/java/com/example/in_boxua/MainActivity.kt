@@ -47,6 +47,19 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     val listGoo = arrayListOf<Goods>(
         Goods(1,"Кросовки Nike 2020",200.0,disct,sizes,listPho),
         Goods(2,"Кросовки Nike 2020",200.0,disct,sizes,listPho),
+        Goods(2,"Кросовки Nike 2020",200.0,disct,sizes,listPho),
+        Goods(2,"Кросовки Nike 2020",200.0,disct,sizes,listPho),
+        Goods(2,"Кросовки Nike 2020",200.0,disct,sizes,listPho),
+        Goods(2,"Кросовки Nike 2020",200.0,disct,sizes,listPho),
+        Goods(2,"Кросовки Nike 2020",200.0,disct,sizes,listPho),
+        Goods(2,"Кросовки Nike 2020",200.0,disct,sizes,listPho),
+        Goods(2,"Кросовки Nike 2020",200.0,disct,sizes,listPho),
+        Goods(2,"Кросовки Nike 2020",200.0,disct,sizes,listPho),
+        Goods(2,"Кросовки Nike 2020",200.0,disct,sizes,listPho),
+        Goods(2,"Кросовки Nike 2020",200.0,disct,sizes,listPho),
+        Goods(2,"Кросовки Nike 2020",200.0,disct,sizes,listPho),
+        Goods(2,"Кросовки Nike 2020",200.0,disct,sizes,listPho),
+        Goods(2,"Кросовки Nike 2020",200.0,disct,sizes,listPho),
         Goods(3,"Кросовки Nike 2020",200.0,disct,sizes,listPho)
 
     )
@@ -57,6 +70,11 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         loadFragment(CatalogFragment(listNews,listGoo))
 
         val navigation: BottomNavigationView = findViewById(R.id.bottomNavigationView)
+
+        if(DataSingleton.inFavorites.isNotEmpty()){
+            navigation.getOrCreateBadge(R.id.menu_favorites).number = DataSingleton.inFavorites.size
+        }
+
         navigation.setOnNavigationItemSelectedListener(this)
     }
 

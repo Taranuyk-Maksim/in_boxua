@@ -6,7 +6,7 @@ import androidx.databinding.ObservableDouble
 import androidx.databinding.ObservableInt
 import androidx.lifecycle.ViewModel
 
-class Goods(
+data class Goods(
     val id : Int,
     val title: String?,
     val price: Double?,
