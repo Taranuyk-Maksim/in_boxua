@@ -31,7 +31,7 @@ class FavoritesFragment () : Fragment() {
 
         val favorites : RecyclerView = view.findViewById(R.id.rv_favorites)
         favorites.layoutManager = GridLayoutManager(context,2)
-        favorites.adapter = GoodsAdapter(goodsList)
+        favorites.adapter = GoodsAdapter()
 
     }
 }

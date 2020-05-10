@@ -1,11 +1,14 @@
 package com.example.in_boxua
 
 import android.view.View
+import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.example.in_boxua.fragments.GoodsFragment
 
 
-class GoodsModel ()  {
+class GoodsModel () : ViewModel() {
 
     lateinit var presser : Presser
     lateinit var savesToCart: SavesToCart
@@ -27,7 +30,6 @@ class GoodsModel ()  {
         this.goods = goods
         this.savesToFavorites = savesToFavorites
     }
-
 
     fun addToCart(){
         savesToCart.toCart()
@@ -57,13 +59,24 @@ class GoodsModel ()  {
         }
     }
 
-
     fun open(view: View) {
         val manager = (view.context as AppCompatActivity).supportFragmentManager
         manager
             .beginTransaction()
-            .replace(R.id.fl_fragment_container, GoodsFragment(goods,DataSingleton.recommendedGoods))
+            .replace(R.id.fl_fragment_container, GoodsFragment(goods,TestData.getGoodsList()))
             .commit()
+    }
+
+    @DrawableRes
+    val b = R.drawable.ic_favorite_border
+    @DrawableRes
+    val r = R.drawable.ic_favorite
+
+    var goodsList : MutableLiveData<List<Goods>> = MutableLiveData()
+
+    fun getListGoods() = goodsList
+    init {
+        goodsList.value = TestData.getGoodsList()
     }
 }
 

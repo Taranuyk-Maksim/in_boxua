@@ -94,7 +94,7 @@
                     app:layout_constraintStart_toStartOf="@+id/iv_photo"
                     app:layout_constraintTop_toTopOf="@+id/iv_photo"
                     app:layout_constraintVertical_bias="0.0"
-                    app:srcCompat="@{goods.isFavorites() ? goods.r : goods.b }"
+                    app:srcCompat="@{goods.isFavorites() ? model.r : model.b }"
                     tools:ignore="VectorDrawableCompat" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,17 +11,17 @@ data class Goods(
     val title: String?,
     val price: Double?,
     val description: String?,
-    val sizeLIst: List<String>,
+    val sizeLIst: List<SizeElement>,
     val photos: List<String>
-) : ViewModel(){
+){
 
     var quantity : ObservableInt = ObservableInt(1)
     var obsPrice : ObservableDouble = ObservableDouble(price!!)
     var isFavorites : ObservableBoolean = ObservableBoolean(false)
+    //тут это не нужно, куда-то убрать
     var currency = " грн"
 
-    @DrawableRes val b = R.drawable.ic_favorite_border
-    @DrawableRes val r = R.drawable.ic_favorite
+
 
 
 }

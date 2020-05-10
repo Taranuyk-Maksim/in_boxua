@@ -14,7 +14,7 @@ import com.example.in_boxua.databinding.FragmentCartBinding
 class CartFragment: Fragment(){
 
     private var goodsList = DataSingleton.inCart
-    val handler = Handler()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -51,7 +51,7 @@ class CartFragment: Fragment(){
         //LinearLayout manager not work!к
         rvListGoods.layoutManager = GridLayoutManager(context,1)
         rvListGoods.adapter =
-            GoodsFoCartAdapter(goods!!,handler)
+            GoodsFoCartAdapter(goods!!,null!!)
         initSum()
     }
 

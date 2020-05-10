@@ -40,21 +40,18 @@ class GoodsFragment(val goods: Goods, private val recommendList : List<Goods>) :
 
     private fun initRecycler(view: View, listPhotos: List<String>,
                              listRecommendGoods : List<Goods>,
-                             listSizes : List<String>){
+                             listSizes : List<SizeElement>){
 
         val sizes : RecyclerView = view.findViewById(R.id.rv_sizes)
         val photos : RecyclerView = view.findViewById(R.id.rv_photos)
 
         val recommend : RecyclerView = view.findViewById(R.id.rv_recomend)
+        val recommendAdapter = GoodsAdapter()
         recommend.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        recommend.adapter =
-            GoodsAdapter(listRecommendGoods)
-
+        recommend.adapter = recommendAdapter
         sizes.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         photos.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-
-        recommend.adapter =
-            GoodsAdapter(listRecommendGoods)
+        recommend.adapter = GoodsAdapter()
         sizes.adapter =
             SizeElementAdapter(listSizes)
         photos.adapter = PhotoAdapter(listPhotos)
