@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -29,6 +31,12 @@ class GoodsFragment(val goods: Goods, private val recommendList : List<Goods>) :
         val bind : FragmentGoodsBinding = FragmentGoodsBinding.bind(view)
         bind.goods = goods
         bind.handler = GoodsCardModel(goods)
+        val backButton : ImageButton = view.findViewById(R.id.iv_back)
+
+        backButton.setOnClickListener {
+            val manager = (view.context as AppCompatActivity).supportFragmentManager
+            manager.popBackStack()
+        }
 
         return view
     }
