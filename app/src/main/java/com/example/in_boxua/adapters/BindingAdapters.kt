@@ -1,15 +1,16 @@
 package com.example.in_boxua.adapters
 
+import android.graphics.drawable.AdaptiveIconDrawable
+import android.graphics.drawable.Drawable
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.squareup.picasso.Picasso
 
-
 @BindingAdapter("app:srcCompat")
-fun bindSrcCompat(imageButton: ImageButton?, int: Int) {
-    imageButton?.setImageResource(int)
+fun bindSrcCompat(imageButton: ImageButton?, drawable: Drawable) {
+    imageButton?.setImageDrawable(drawable)
 }
 @BindingAdapter("app:text","app:currency")
 fun concat(textView: TextView?,price : Double?, cur : String?) {

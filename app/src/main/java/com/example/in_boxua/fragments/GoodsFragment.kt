@@ -27,7 +27,7 @@ class GoodsFragment(val goods: Goods, private val recommendList : List<Goods>) :
 
         val bind : FragmentGoodsBinding = FragmentGoodsBinding.bind(view)
         bind.goods = goods
-        bind.model = GoodsModel(goods)
+        bind.handler = ActionHandler(goods)
 
         return view
     }
@@ -46,12 +46,12 @@ class GoodsFragment(val goods: Goods, private val recommendList : List<Goods>) :
         val photos : RecyclerView = view.findViewById(R.id.rv_photos)
 
         val recommend : RecyclerView = view.findViewById(R.id.rv_recomend)
-        val recommendAdapter = GoodsAdapter()
+        val recommendAdapter = GoodsAdapter(TestData.getGoodsList())
         recommend.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         recommend.adapter = recommendAdapter
         sizes.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         photos.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        recommend.adapter = GoodsAdapter()
+        recommend.adapter = GoodsAdapter(TestData.getGoodsList())
         sizes.adapter =
             SizeElementAdapter(listSizes)
         photos.adapter = PhotoAdapter(listPhotos)

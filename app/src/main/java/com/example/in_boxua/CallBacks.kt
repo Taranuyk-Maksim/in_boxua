@@ -4,6 +4,10 @@ interface Presser{
     fun onPress()
 }
 
+interface AdapterUpdates{
+    fun toUpdate()
+}
+
 interface SavesToCart{
     fun toCart()
 }

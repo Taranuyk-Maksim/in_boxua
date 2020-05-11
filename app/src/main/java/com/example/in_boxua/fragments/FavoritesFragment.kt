@@ -5,15 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.in_boxua.*
 import com.example.in_boxua.adapters.GoodsAdapter
-import com.example.in_boxua.adapters.PhotoAdapter
-import com.example.in_boxua.adapters.SizeElementAdapter
+import com.example.in_boxua.viewModels.FavoritesViewModel
 
-class FavoritesFragment () : Fragment() {
+class FavoritesFragment : Fragment() {
+
+    private val favoritesGoodsVIewModel by lazy { ViewModelProviders.of(this).get(FavoritesViewModel::class.java)}
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -22,16 +25,22 @@ class FavoritesFragment () : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_favorites,null)
 
-        initRecycler(view,DataSingleton.inFavorites)
+        initRecycler(view)
 
         return view
     }
 
-    private fun initRecycler(view: View, goodsList : List<Goods>){
+    private fun initRecycler(view: View){
 
         val favorites : RecyclerView = view.findViewById(R.id.rv_favorites)
-        favorites.layoutManager = GridLayoutManager(context,2)
-        favorites.adapter = GoodsAdapter()
 
+        favorites.layoutManager = GridLayoutManager(context,2)
+
+        favoritesGoodsVIewModel.getFavoritesGoods().observe(this, Observer {
+            it?.let {
+                val favoritesAdapter = GoodsAdapter(it)
+                favorites.adapter = favoritesAdapter
+            }
+        })
     }
 }

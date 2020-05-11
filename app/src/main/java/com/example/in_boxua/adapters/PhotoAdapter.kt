@@ -19,7 +19,6 @@ class PhotoAdapter (private val list: List<String>) : RecyclerView.Adapter<Photo
         return list.size
     }
     override fun onBindViewHolder(holder: PhotoHolder, position: Int) {
-
         Picasso.get()
             .load(list[position])
             .placeholder(R.drawable.placeholder)

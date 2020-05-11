@@ -51,7 +51,7 @@ class CartFragment: Fragment(){
         //LinearLayout manager not work!к
         rvListGoods.layoutManager = GridLayoutManager(context,1)
         rvListGoods.adapter =
-            GoodsFoCartAdapter(goods!!,null!!)
+            GoodsFoCartAdapter(DataSingleton.inCart)
         initSum()
     }
 

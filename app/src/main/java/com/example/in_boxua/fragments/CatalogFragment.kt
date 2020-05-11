@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.in_boxua.GoodsModel
+import com.example.in_boxua.viewModels.GoodsViewModel
 import com.example.in_boxua.adapters.GoodsAdapter
 import com.example.in_boxua.adapters.PhotoAdapter
 import com.example.in_boxua.R
@@ -18,7 +18,8 @@ import com.example.in_boxua.TestData
 
 class CatalogFragment () : Fragment() {
 
-    private val goodsViewModel by lazy { ViewModelProviders.of(this).get(GoodsModel::class.java)}
+    private val goodsViewModel by lazy { ViewModelProviders.of(this).get(GoodsViewModel::class.java)}
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -40,14 +41,13 @@ class CatalogFragment () : Fragment() {
         val photoAdapter = PhotoAdapter(newsList)
         news.layoutManager = LinearLayoutManager(context)
         news.adapter = photoAdapter
-
-        val goodsAdapter = GoodsAdapter()
         listGoods.layoutManager = GridLayoutManager(context,2)
-        listGoods.adapter = goodsAdapter
 
-        goodsViewModel.getListGoods().observe(this, Observer {
+
+        goodsViewModel.getCatalogListGoods().observe(this, Observer {
             it?.let {
-                goodsAdapter.setGoodsList(it)
+                val goodsAdapter = GoodsAdapter(it)
+                listGoods.adapter = goodsAdapter
             }
         })
 

@@ -21,9 +21,9 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
         val navigation: BottomNavigationView = findViewById(R.id.bottomNavigationView)
 
-        if(DataSingleton.inFavorites.isNotEmpty()){
-            navigation.getOrCreateBadge(R.id.menu_favorites).number = DataSingleton.inFavorites.size
-        }
+//        if(DataSingleton.inFavorites.isNotEmpty()){
+//            navigation.getOrCreateBadge(R.id.menu_favorites).number = DataSingleton.inFavorites.size
+//        }
 
         navigation.setOnNavigationItemSelectedListener(this)
     }

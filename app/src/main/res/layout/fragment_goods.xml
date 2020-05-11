@@ -7,8 +7,8 @@
             name="goods"
             type="com.example.in_boxua.Goods" />
         <variable
-            name="model"
-            type="com.example.in_boxua.GoodsModel" />
+            name="handler"
+            type="com.example.in_boxua.ActionHandler" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -71,7 +71,7 @@
                             android:background="@drawable/background_button_green"
                             android:text="добавить в корзину"
                             android:textColor="#ffffff"
-                            android:onClick="@{() -> model.addToCart()}"
+                            android:onClick="@{() -> handler.addToCart()}"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/rv_sizes">
@@ -243,14 +243,14 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginBottom="5dp"
                     android:background="#FFFFFF"
-                    android:onClick="@{()-> model.addToFavorite()}"
+                    android:onClick="@{()-> handler.addToFavorite()}"
                     app:layout_constraintBottom_toBottomOf="@+id/iv_back"
                     app:layout_constraintEnd_toStartOf="@+id/iv_share"
                     app:layout_constraintTop_toTopOf="@+id/iv_back"
-                    app:srcCompat="@{goods.isFavorites() ? model.r : model.r }"
+                    app:srcCompat="@{goods.isFavorites() ? @drawable/ic_favorite : @drawable/ic_favorite_border}"
                     tools:ignore="VectorDrawableCompat" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/iv_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

@@ -7,8 +7,8 @@
             name="goods"
             type="com.example.in_boxua.Goods" />
         <variable
-            name="model"
-            type="com.example.in_boxua.GoodsModel" />
+            name="handler"
+            type="com.example.in_boxua.ActionHandler" />
     </data>
     <LinearLayout
         android:layout_width="match_parent"
@@ -58,7 +58,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginLeft="32dp"
                 android:background="@drawable/background_stroke"
-                android:onClick="@{()->model.goodsPlas()}"
+                android:onClick="@{()-> handler.goodsPlas()}"
                 app:layout_constraintBottom_toBottomOf="@+id/ib_minus"
                 app:layout_constraintStart_toEndOf="@+id/ib_minus"
                 app:layout_constraintTop_toTopOf="@+id/ib_minus"
@@ -75,7 +75,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/background_stroke"
-                android:onClick="@{()->model.goodsMinus()}"
+                android:onClick="@{()-> handler.goodsMinus()}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toBottomOf="@+id/tv_size"
@@ -113,7 +113,7 @@
                 android:id="@+id/tv_size"
                 style="@style/TextStyle.SizeElement"
                 android:layout_marginTop="16dp"
-                android:text="XL"
+                android:text="@{handler.getFavoriteSize()}"
                 app:layout_constraintEnd_toEndOf="@+id/tv_title"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/imageView"

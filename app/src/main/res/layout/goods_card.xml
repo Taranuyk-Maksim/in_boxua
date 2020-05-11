@@ -9,8 +9,8 @@
             name="goods"
             type="com.example.in_boxua.Goods" />
         <variable
-            name="model"
-            type="com.example.in_boxua.GoodsModel" />
+            name="handler"
+            type="com.example.in_boxua.ActionHandler" />
     </data>
 
 
@@ -24,7 +24,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="5dp"
             app:cardCornerRadius="5dp"
-            android:onClick="@{(view)->model.open(view)}"
+            android:onClick="@{(view)->handler.openGoodsPage(view)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -87,14 +87,14 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:background="@drawable/background_stroke"
-                    android:onClick="@{()->model.addToFavorite()}"
                     app:layout_constraintBottom_toBottomOf="@+id/iv_photo"
                     app:layout_constraintEnd_toEndOf="@+id/iv_photo"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/iv_photo"
                     app:layout_constraintTop_toTopOf="@+id/iv_photo"
                     app:layout_constraintVertical_bias="0.0"
-                    app:srcCompat="@{goods.isFavorites() ? model.r : model.b }"
+                    android:onClick="@{()->handler.addToFavorite()}"
+                    app:srcCompat="@{goods.isFavorites() ? @drawable/ic_favorite : @drawable/ic_favorite_border}"
                     tools:ignore="VectorDrawableCompat" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

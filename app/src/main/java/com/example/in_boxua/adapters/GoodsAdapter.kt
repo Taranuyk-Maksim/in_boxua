@@ -1,41 +1,41 @@
 package com.example.in_boxua.adapters
 
+import android.app.Activity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.in_boxua.AddsToFavorites
-import com.example.in_boxua.DataSingleton
+import com.example.in_boxua.ActionHandler
+import com.example.in_boxua.AdapterUpdates
 import com.example.in_boxua.Goods
-import com.example.in_boxua.GoodsModel
 import com.example.in_boxua.databinding.GoodsCardBinding
+import com.example.in_boxua.viewModels.FavoritesViewModel
 
-class GoodsAdapter : RecyclerView.Adapter<GoodsAdapter.GoodsHolder>() {
-
-    private var goodsList : List<Goods> = ArrayList()
+class GoodsAdapter(private var goodsList : List<Goods>) : RecyclerView.Adapter<GoodsAdapter.GoodsHolder>(),AdapterUpdates  {
 
     override fun getItemCount() : Int = goodsList.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GoodsHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding =  GoodsCardBinding.inflate(inflater)
-        return GoodsHolder(binding)
+        return GoodsHolder(binding,this)
     }
 
     override fun onBindViewHolder(holder: GoodsHolder, position: Int) {
         holder.bind(goodsList[position])
     }
 
-    fun setGoodsList(listGoods: List<Goods>){
-        this.goodsList = listGoods
-        notifyDataSetChanged()
-    }
-
-   inner class GoodsHolder(private val binding: GoodsCardBinding) : RecyclerView.ViewHolder(binding.root) {
+   inner class GoodsHolder(private val binding: GoodsCardBinding,var updates: AdapterUpdates) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Goods){
+            val ah = ActionHandler(item)
+            ah.setUpdater(updates)
             binding.goods = item
-            binding.model = GoodsModel(item)
+            binding.handler = ah
         }
+    }
+
+    override fun toUpdate() {
+        notifyDataSetChanged()
     }
 }
 
