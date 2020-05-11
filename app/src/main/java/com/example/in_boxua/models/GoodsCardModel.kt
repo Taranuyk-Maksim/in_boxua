@@ -15,14 +15,11 @@ class GoodsCardModel() {
     constructor(goods: Goods) : this(){
         this.goods = goods
     }
-
+    var i = 0
     fun addToCart(){
-        var i = 0
-        if (i == 0){
+        if (i++ <= 0){
             DataSingleton.inCart.add(goods)
-            i++
         }
-
     }
 
     fun addToFavorite(){

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -25,7 +26,14 @@ class FavoritesFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_favorites,null)
 
-        initRecycler(view)
+        if(DataSingleton.favoritesGoods.isNotEmpty()){
+            val status : TextView = view.findViewById(R.id.tv_empty_favorites)
+            status.visibility = View.GONE
+            initRecycler(view)
+        }
+
+
+
 
         return view
     }

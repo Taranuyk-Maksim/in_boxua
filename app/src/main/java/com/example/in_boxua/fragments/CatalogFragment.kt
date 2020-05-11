@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -27,7 +29,16 @@ class CatalogFragment () : Fragment() {
     ): View? {
 
         val view  = inflater.inflate(R.layout.fragment_catalog,null)
-
+        val openCategory: Button = view.findViewById(R.id.bt_categories)
+        openCategory.setOnClickListener {
+            val manager = (view.context as AppCompatActivity).supportFragmentManager
+            manager
+                .beginTransaction()
+                .replace(
+                    R.id.fl_fragment_container, CategoryFragment())
+                .addToBackStack(CategoryFragment().tag)
+                .commit()
+        }
         initRecycler(view,TestData.getNews())
 
         return view
