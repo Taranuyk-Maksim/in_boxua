@@ -9,8 +9,8 @@
             name="goods"
             type="com.example.in_boxua.Goods" />
         <variable
-            name="handler"
-            type="com.example.in_boxua.ActionHandler" />
+            name="model"
+            type="com.example.in_boxua.models.GoodsCardModel" />
     </data>
 
 
@@ -24,7 +24,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="5dp"
             app:cardCornerRadius="5dp"
-            android:onClick="@{(view)->handler.openGoodsPage(view)}"
+            android:onClick="@{(view)->model.openGoodsPage(view)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,11 +38,11 @@
                     android:id="@+id/iv_photo"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginRight="4dp"
                     android:adjustViewBounds="true"
                     android:scaleType="fitStart"
                     android:src="@drawable/snekers_photo"
@@ -55,9 +55,9 @@
                     style="@style/TextStyle.Title.Card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
                     android:text="@{goods.title}"
@@ -72,14 +72,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:layout_marginBottom="8dp"
-                    app:text="@{goods.price}"
+                    android:layout_marginBottom="3dp"
                     app:currency="@{goods.currency}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/tv_title"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/tv_title"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                    app:text="@{goods.price}" />
 
                 <ImageButton
                     android:id="@+id/ib_add_to_favorite"
@@ -93,7 +93,7 @@
                     app:layout_constraintStart_toStartOf="@+id/iv_photo"
                     app:layout_constraintTop_toTopOf="@+id/iv_photo"
                     app:layout_constraintVertical_bias="0.0"
-                    android:onClick="@{()->handler.addToFavorite()}"
+                    android:onClick="@{()->model.addToFavorite()}"
                     app:srcCompat="@{goods.isFavorites() ? @drawable/ic_favorite : @drawable/ic_favorite_border}"
                     tools:ignore="VectorDrawableCompat" />
 

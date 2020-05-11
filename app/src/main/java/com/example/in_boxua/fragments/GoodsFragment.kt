@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.in_boxua.*
+import com.example.in_boxua.models.GoodsCardModel
 import com.example.in_boxua.adapters.GoodsAdapter
 import com.example.in_boxua.adapters.PhotoAdapter
 import com.example.in_boxua.adapters.SizeElementAdapter
@@ -27,15 +28,9 @@ class GoodsFragment(val goods: Goods, private val recommendList : List<Goods>) :
 
         val bind : FragmentGoodsBinding = FragmentGoodsBinding.bind(view)
         bind.goods = goods
-        bind.handler = ActionHandler(goods)
+        bind.handler = GoodsCardModel(goods)
 
         return view
-    }
-    class Handler1(val goods: Goods) : SavesToCart{
-        override fun toCart() {
-            DataSingleton.inCart.add(goods)
-        }
-
     }
 
     private fun initRecycler(view: View, listPhotos: List<String>,

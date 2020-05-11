@@ -40,6 +40,7 @@ class FavoritesFragment : Fragment() {
             it?.let {
                 val favoritesAdapter = GoodsAdapter(it)
                 favorites.adapter = favoritesAdapter
+
             }
         })
     }

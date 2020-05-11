@@ -35,14 +35,12 @@ class CatalogFragment () : Fragment() {
 
     private fun initRecycler(view: View, newsList: List<String>){
 
-        val news : RecyclerView = view.findViewById(R.id.rv_new_goods)
+        val news : RecyclerView = view.findViewById(R.id.rv_news)
         val listGoods : RecyclerView = view.findViewById(R.id.rv_list_goods)
-
         val photoAdapter = PhotoAdapter(newsList)
         news.layoutManager = LinearLayoutManager(context)
         news.adapter = photoAdapter
         listGoods.layoutManager = GridLayoutManager(context,2)
-
 
         goodsViewModel.getCatalogListGoods().observe(this, Observer {
             it?.let {

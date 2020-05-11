@@ -7,7 +7,7 @@ import com.example.in_boxua.DataSingleton
 import com.example.in_boxua.Goods
 import com.example.in_boxua.TestData
 
-class FavoritesViewModel : ViewModel(),AdapterUpdates {
+class FavoritesViewModel : ViewModel() {
 
     private var favoritesGoodsList : MutableLiveData<ArrayList<Goods>> = MutableLiveData()
 
@@ -16,9 +16,4 @@ class FavoritesViewModel : ViewModel(),AdapterUpdates {
     init {
         favoritesGoodsList.value = DataSingleton.favoritesGoods
     }
-
-    override fun toUpdate() {
-        favoritesGoodsList.value = DataSingleton.favoritesGoods
-    }
-
 }

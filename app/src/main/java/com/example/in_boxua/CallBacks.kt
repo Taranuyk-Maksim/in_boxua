@@ -5,7 +5,7 @@ interface Presser{
 }
 
 interface AdapterUpdates{
-    fun toUpdate()
+    fun removeItem()
 }
 
 interface SavesToCart{
