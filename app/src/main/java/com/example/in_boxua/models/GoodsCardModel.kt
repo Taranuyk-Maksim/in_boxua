@@ -46,6 +46,7 @@ class GoodsCardModel() {
                 R.id.fl_fragment_container, GoodsFragment(goods,
                     TestData.getGoodsList()
                 ))
+            .addToBackStack(goods.id.toString())
             .commit()
     }
 }

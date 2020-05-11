@@ -21,10 +21,10 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
         val navigation: BottomNavigationView = findViewById(R.id.bottomNavigationView)
 
-//        if(DataSingleton.inFavorites.isNotEmpty()){
-//            navigation.getOrCreateBadge(R.id.menu_favorites).number = DataSingleton.inFavorites.size
-//        }
-
+        if(DataSingleton.favoritesGoods.isNotEmpty()){
+            navigation.getOrCreateBadge(R.id.menu_favorites).number = 5
+        }
+        navigation.getOrCreateBadge(R.id.menu_favorites).number = 6
         navigation.setOnNavigationItemSelectedListener(this)
     }
 
@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.fl_fragment_container, fragment)
+                .addToBackStack(fragment.tag)
                 .commit()
             return true
         }
