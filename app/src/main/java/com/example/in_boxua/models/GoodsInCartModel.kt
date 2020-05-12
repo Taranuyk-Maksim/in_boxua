@@ -2,7 +2,7 @@ package com.example.in_boxua.models
 
 import com.example.in_boxua.AdapterUpdates
 import com.example.in_boxua.DataSingleton
-import com.example.in_boxua.Goods
+import com.example.in_boxua.data.Goods
 import com.example.in_boxua.SumCalc
 
 class GoodsInCartModel(private val goods : Goods,

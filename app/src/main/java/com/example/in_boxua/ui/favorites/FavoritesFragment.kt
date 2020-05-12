@@ -1,4 +1,4 @@
-package com.example.in_boxua.fragments
+package com.example.in_boxua.ui.favorites
 
 import android.os.Bundle
 import android.view.LayoutInflater

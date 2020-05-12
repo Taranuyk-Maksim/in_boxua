@@ -2,7 +2,7 @@ package com.example.in_boxua.viewModels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.in_boxua.Goods
+import com.example.in_boxua.data.Goods
 import com.example.in_boxua.TestData
 
 

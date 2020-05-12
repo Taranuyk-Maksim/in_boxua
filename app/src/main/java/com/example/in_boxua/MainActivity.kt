@@ -4,10 +4,9 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
-import com.example.in_boxua.fragments.CartFragment
-import com.example.in_boxua.fragments.CatalogFragment
-import com.example.in_boxua.fragments.FavoritesFragment
+import com.example.in_boxua.ui.cart.CartFragment
+import com.example.in_boxua.ui.catalog.CatalogFragment
+import com.example.in_boxua.ui.favorites.FavoritesFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -49,7 +48,8 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                     fragment = CatalogFragment()
                 }
                 R.id.menu_favorites ->{
-                    fragment = FavoritesFragment()
+                    fragment =
+                        FavoritesFragment()
                 }
                 R.id.menu_trash ->{
                     fragment = CartFragment()

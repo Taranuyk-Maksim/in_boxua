@@ -5,7 +5,7 @@
     <data>
         <variable
             name="goods"
-            type="com.example.in_boxua.Goods" />
+            type="com.example.in_boxua.data.Goods" />
         <variable
             name="model"
             type="com.example.in_boxua.models.GoodsInCartModel" />

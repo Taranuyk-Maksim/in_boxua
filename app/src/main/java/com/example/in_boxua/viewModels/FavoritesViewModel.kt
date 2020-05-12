@@ -2,10 +2,8 @@ package com.example.in_boxua.viewModels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.in_boxua.AdapterUpdates
 import com.example.in_boxua.DataSingleton
-import com.example.in_boxua.Goods
-import com.example.in_boxua.TestData
+import com.example.in_boxua.data.Goods
 
 class FavoritesViewModel : ViewModel() {
 

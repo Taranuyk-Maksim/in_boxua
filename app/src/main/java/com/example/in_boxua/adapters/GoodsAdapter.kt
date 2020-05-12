@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.in_boxua.models.GoodsCardModel
 import com.example.in_boxua.AdapterUpdates
-import com.example.in_boxua.Goods
+import com.example.in_boxua.data.Goods
 import com.example.in_boxua.databinding.GoodsCardBinding
 
 class GoodsAdapter(private var goodsList : List<Goods>) : RecyclerView.Adapter<GoodsAdapter.GoodsHolder>() {

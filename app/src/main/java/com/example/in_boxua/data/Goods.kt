@@ -1,10 +1,9 @@
-package com.example.in_boxua
+package com.example.in_boxua.data
 
-import androidx.annotation.DrawableRes
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableDouble
 import androidx.databinding.ObservableInt
-import androidx.lifecycle.ViewModel
+import com.example.in_boxua.SizeElement
 
 data class Goods(
     val id : Int,

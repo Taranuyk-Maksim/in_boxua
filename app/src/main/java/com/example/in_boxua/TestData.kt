@@ -1,5 +1,7 @@
 package com.example.in_boxua
 
+import com.example.in_boxua.data.Goods
+
 object TestData {
 
     fun getSizes() = listOf<SizeElement>(
@@ -35,19 +37,117 @@ object TestData {
             "- бирка с фирменным логотипом Staff вшита в шов."
 
     fun getGoodsList() = listOf(
-        Goods(1,"Кросовки Nike 2020",200.0,disct,getSizes(),getPhotos()),
-        Goods(2,"Кросовки Nike 2020",200.0,disct,getSizes(),getPhotos()),
-        Goods(2,"Кросовки Nike 2020",200.0,disct,getSizes(),getPhotos()),
-        Goods(2,"Кросовки Nike 2020",200.0,disct,getSizes(),getPhotos()),
-        Goods(2,"Кросовки Nike 2020",200.0,disct,getSizes(),getPhotos()),
-        Goods(2,"Кросовки Nike 2020",200.0,disct,getSizes(),getPhotos()),
-        Goods(2,"Кросовки Nike 2020",200.0,disct,getSizes(),getPhotos()),
-        Goods(2,"Кросовки Nike 2020",200.0,disct,getSizes(),getPhotos()),
-        Goods(2,"Кросовки Nike 2020",200.0,disct,getSizes(),getPhotos()),
-        Goods(2,"Кросовки Nike 2020",200.0,disct,getSizes(),getPhotos()),
-        Goods(2,"Кросовки Nike 2020",200.0,disct,getSizes(),getPhotos()),
-        Goods(2,"Кросовки Nike 2020",200.0,disct,getSizes(),getPhotos()),
-        Goods(2,"Кросовки Nike 2020",200.0,disct,getSizes(),getPhotos()),
-        Goods(2,"Кросовки Nike 2020",200.0,disct,getSizes(),getPhotos())
+        Goods(
+            1,
+            "Кросовки Nike 2020",
+            200.0,
+            disct,
+            getSizes(),
+            getPhotos()
+        ),
+        Goods(
+            2,
+            "Кросовки Nike 2020",
+            200.0,
+            disct,
+            getSizes(),
+            getPhotos()
+        ),
+        Goods(
+            2,
+            "Кросовки Nike 2020",
+            200.0,
+            disct,
+            getSizes(),
+            getPhotos()
+        ),
+        Goods(
+            2,
+            "Кросовки Nike 2020",
+            200.0,
+            disct,
+            getSizes(),
+            getPhotos()
+        ),
+        Goods(
+            2,
+            "Кросовки Nike 2020",
+            200.0,
+            disct,
+            getSizes(),
+            getPhotos()
+        ),
+        Goods(
+            2,
+            "Кросовки Nike 2020",
+            200.0,
+            disct,
+            getSizes(),
+            getPhotos()
+        ),
+        Goods(
+            2,
+            "Кросовки Nike 2020",
+            200.0,
+            disct,
+            getSizes(),
+            getPhotos()
+        ),
+        Goods(
+            2,
+            "Кросовки Nike 2020",
+            200.0,
+            disct,
+            getSizes(),
+            getPhotos()
+        ),
+        Goods(
+            2,
+            "Кросовки Nike 2020",
+            200.0,
+            disct,
+            getSizes(),
+            getPhotos()
+        ),
+        Goods(
+            2,
+            "Кросовки Nike 2020",
+            200.0,
+            disct,
+            getSizes(),
+            getPhotos()
+        ),
+        Goods(
+            2,
+            "Кросовки Nike 2020",
+            200.0,
+            disct,
+            getSizes(),
+            getPhotos()
+        ),
+        Goods(
+            2,
+            "Кросовки Nike 2020",
+            200.0,
+            disct,
+            getSizes(),
+            getPhotos()
+        ),
+        Goods(
+            2,
+            "Кросовки Nike 2020",
+            200.0,
+            disct,
+            getSizes(),
+            getPhotos()
+        ),
+        Goods(
+            2,
+            "Кросовки Nike 2020",
+            200.0,
+            disct,
+            getSizes(),
+            getPhotos()
+        )
     )
 }

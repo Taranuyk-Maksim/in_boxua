@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/catalogFragment"
-        android:name="com.example.in_boxua.fragments.CatalogFragment"
+        android:name="com.example.in_boxua.ui.catalog.CatalogFragment"
         android:label="CatalogFragment" >
         <action
             android:id="@+id/action_catalogFragment_to_favoritesFragment"
@@ -14,7 +14,7 @@
     </fragment>
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="com.example.in_boxua.fragments.FavoritesFragment"
+        android:name="com.example.in_boxua.ui.favorites.FavoritesFragment"
         android:label="FavoritesFragment" >
         <action
             android:id="@+id/action_favoritesFragment_to_cartFragment"
@@ -22,10 +22,10 @@
     </fragment>
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.example.in_boxua.fragments.CartFragment"
+        android:name="com.example.in_boxua.ui.cart.CartFragment"
         android:label="CartFragment" />
     <fragment
         android:id="@+id/categoryFragment"
-        android:name="com.example.in_boxua.fragments.CategoryFragment"
+        android:name="com.example.in_boxua.ui.categories.CategoryFragment"
         android:label="CategoryFragment" />
 </navigation>

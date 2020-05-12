@@ -1,4 +1,4 @@
-package com.example.in_boxua.fragments
+package com.example.in_boxua.ui.goods
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,6 +14,7 @@ import com.example.in_boxua.models.GoodsCardModel
 import com.example.in_boxua.adapters.GoodsAdapter
 import com.example.in_boxua.adapters.PhotoAdapter
 import com.example.in_boxua.adapters.SizeElementAdapter
+import com.example.in_boxua.data.Goods
 import com.example.in_boxua.databinding.FragmentGoodsBinding
 
 class GoodsFragment(val goods: Goods, private val recommendList : List<Goods>) : Fragment() {

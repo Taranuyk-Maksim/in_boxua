@@ -2,7 +2,8 @@ package com.example.in_boxua.models
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.in_boxua.*
-import com.example.in_boxua.fragments.GoodsFragment
+import com.example.in_boxua.data.Goods
+import com.example.in_boxua.ui.goods.GoodsFragment
 
 class GoodsCardModel() {
     private lateinit var goods : Goods
@@ -40,9 +41,12 @@ class GoodsCardModel() {
         manager
             .beginTransaction()
             .replace(
-                R.id.fl_fragment_container, GoodsFragment(goods,
+                R.id.fl_fragment_container,
+                GoodsFragment(
+                    goods,
                     TestData.getGoodsList()
-                ))
+                )
+            )
             .addToBackStack(goods.id.toString())
             .commit()
     }

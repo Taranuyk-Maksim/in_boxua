@@ -1,4 +1,4 @@
-package com.example.in_boxua.fragments
+package com.example.in_boxua.ui.cart
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.in_boxua.*
 import com.example.in_boxua.adapters.GoodsFoCartAdapter
+import com.example.in_boxua.data.Goods
 import com.example.in_boxua.databinding.FragmentCartBinding
 
 class CartFragment: Fragment(){

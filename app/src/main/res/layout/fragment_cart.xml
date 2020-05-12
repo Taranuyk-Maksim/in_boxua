@@ -6,7 +6,7 @@
         <import type="com.example.in_boxua.DataSingleton"/>
         <variable
             name="goods"
-            type="com.example.in_boxua.Goods" />
+            type="com.example.in_boxua.data.Goods" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

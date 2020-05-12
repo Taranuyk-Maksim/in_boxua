@@ -1,4 +1,4 @@
-package com.example.in_boxua.fragments
+package com.example.in_boxua.ui.catalog
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -17,6 +17,7 @@ import com.example.in_boxua.adapters.GoodsAdapter
 import com.example.in_boxua.adapters.PhotoAdapter
 import com.example.in_boxua.R
 import com.example.in_boxua.TestData
+import com.example.in_boxua.ui.categories.CategoryFragment
 
 class CatalogFragment () : Fragment() {
 
@@ -35,7 +36,9 @@ class CatalogFragment () : Fragment() {
             manager
                 .beginTransaction()
                 .replace(
-                    R.id.fl_fragment_container, CategoryFragment())
+                    R.id.fl_fragment_container,
+                    CategoryFragment()
+                )
                 .addToBackStack(CategoryFragment().tag)
                 .commit()
         }

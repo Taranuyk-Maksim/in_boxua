@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.in_boxua.*
+import com.example.in_boxua.data.Goods
 import com.example.in_boxua.models.GoodsInCartModel
 import com.example.in_boxua.databinding.CardForCartBinding
 
