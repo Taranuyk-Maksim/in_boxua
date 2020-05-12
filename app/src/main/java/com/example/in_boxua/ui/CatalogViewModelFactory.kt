@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.in_boxua.data.GoodsRepository
 import com.example.in_boxua.ui.catalog.CatalogViewModel
 
-class ViewModelFactory(private val quoteRepository: GoodsRepository): ViewModelProvider.NewInstanceFactory() {
+class CatalogViewModelFactory(private val quoteRepository: GoodsRepository): ViewModelProvider.NewInstanceFactory() {
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

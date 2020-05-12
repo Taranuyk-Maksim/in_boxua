@@ -1,14 +1,13 @@
 package com.example.in_boxua.utils
 
-import androidx.lifecycle.ViewModelProvider
 import com.example.in_boxua.data.FakeDatabase
 import com.example.in_boxua.data.GoodsRepository
-import com.example.in_boxua.ui.ViewModelFactory
+import com.example.in_boxua.ui.CatalogViewModelFactory
 
 object InjectorUtils {
 
-    fun provideGoodsViewModelFactory(): ViewModelFactory {
+    fun provideGoodsViewModelFactory(): CatalogViewModelFactory {
         val quoteRepository = GoodsRepository.getInstance(FakeDatabase.getInstance().goodsDao)
-        return ViewModelFactory(quoteRepository)
+        return CatalogViewModelFactory(quoteRepository)
     }
 }
