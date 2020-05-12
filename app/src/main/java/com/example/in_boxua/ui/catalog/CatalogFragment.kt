@@ -12,16 +12,18 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.in_boxua.viewModels.GoodsViewModel
-import com.example.in_boxua.adapters.GoodsAdapter
-import com.example.in_boxua.adapters.PhotoAdapter
 import com.example.in_boxua.R
 import com.example.in_boxua.TestData
+import com.example.in_boxua.adapters.GoodsCatalogAdapter
 import com.example.in_boxua.ui.categories.CategoryFragment
+import com.example.in_boxua.adapters.PhotoAdapter
+import com.example.in_boxua.utils.InjectorUtils
 
-class CatalogFragment () : Fragment() {
+class CatalogFragment : Fragment() {
 
-    private val goodsViewModel by lazy { ViewModelProviders.of(this).get(GoodsViewModel::class.java)}
+    private val factory = InjectorUtils.provideGoodsViewModelFactory()
+    private val  viewModel by lazy {ViewModelProviders.of(this,factory)
+        .get(CatalogViewModel::class.java)}
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,6 +33,7 @@ class CatalogFragment () : Fragment() {
 
         val view  = inflater.inflate(R.layout.fragment_catalog,null)
         val openCategory: Button = view.findViewById(R.id.bt_categories)
+
         openCategory.setOnClickListener {
             val manager = (view.context as AppCompatActivity).supportFragmentManager
             manager
@@ -52,13 +55,15 @@ class CatalogFragment () : Fragment() {
         val news : RecyclerView = view.findViewById(R.id.rv_news)
         val listGoods : RecyclerView = view.findViewById(R.id.rv_list_goods)
         val photoAdapter = PhotoAdapter(newsList)
+
         news.layoutManager = LinearLayoutManager(context)
         news.adapter = photoAdapter
         listGoods.layoutManager = GridLayoutManager(context,2)
 
-        goodsViewModel.getCatalogListGoods().observe(this, Observer {
+        viewModel.getGoods().observe(this, Observer {
             it?.let {
-                val goodsAdapter = GoodsAdapter(it)
+                val goodsAdapter =
+                    GoodsCatalogAdapter(it)
                 listGoods.adapter = goodsAdapter
             }
         })

@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.in_boxua.*
-import com.example.in_boxua.adapters.GoodsAdapter
+import com.example.in_boxua.adapters.GoodsCatalogAdapter
 import com.example.in_boxua.viewModels.FavoritesViewModel
 
 class FavoritesFragment : Fragment() {
@@ -32,9 +32,6 @@ class FavoritesFragment : Fragment() {
             initRecycler(view)
         }
 
-
-
-
         return view
     }
 
@@ -46,7 +43,8 @@ class FavoritesFragment : Fragment() {
 
         favoritesGoodsVIewModel.getFavoritesGoods().observe(this, Observer {
             it?.let {
-                val favoritesAdapter = GoodsAdapter(it)
+                val favoritesAdapter =
+                    GoodsCatalogAdapter(it)
                 favorites.adapter = favoritesAdapter
 
             }

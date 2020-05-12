@@ -6,6 +6,7 @@ import com.example.in_boxua.data.Goods
 import com.example.in_boxua.ui.goods.GoodsFragment
 
 class GoodsCardModel() {
+
     private lateinit var goods : Goods
     lateinit var updates: AdapterUpdates
 
@@ -16,7 +17,9 @@ class GoodsCardModel() {
     constructor(goods: Goods) : this(){
         this.goods = goods
     }
+
     var i = 0
+
     fun addToCart(){
         if (i++ <= 0){
             DataSingleton.inCart.add(goods)
@@ -32,7 +35,6 @@ class GoodsCardModel() {
         }else{
             goods.isFavorites.set(true)
             DataSingleton.favoritesGoods.add(goods)
-           // updates.toUpdate()
         }
     }
 

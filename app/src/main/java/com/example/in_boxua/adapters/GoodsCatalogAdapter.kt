@@ -8,7 +8,7 @@ import com.example.in_boxua.AdapterUpdates
 import com.example.in_boxua.data.Goods
 import com.example.in_boxua.databinding.GoodsCardBinding
 
-class GoodsAdapter(private var goodsList : List<Goods>) : RecyclerView.Adapter<GoodsAdapter.GoodsHolder>() {
+class GoodsCatalogAdapter(private var goodsList : List<Goods>) : RecyclerView.Adapter<GoodsCatalogAdapter.GoodsHolder>() {
 
     override fun getItemCount() : Int = goodsList.size
     private var itemPosition : Int = 0
@@ -35,6 +35,6 @@ class GoodsAdapter(private var goodsList : List<Goods>) : RecyclerView.Adapter<G
        override fun removeItem() {
            notifyItemRemoved(itemPosition)
        }
-    }
+   }
 }
 

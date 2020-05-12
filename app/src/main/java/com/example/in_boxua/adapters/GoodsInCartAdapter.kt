@@ -8,8 +8,8 @@ import com.example.in_boxua.data.Goods
 import com.example.in_boxua.models.GoodsInCartModel
 import com.example.in_boxua.databinding.CardForCartBinding
 
-class GoodsFoCartAdapter(private val listGoods : List<Goods>
-    ) : RecyclerView.Adapter<GoodsFoCartAdapter.GoodsHolder>() {
+class GoodsInCartAdapter(private val listGoods : List<Goods>
+    ) : RecyclerView.Adapter<GoodsInCartAdapter.GoodsHolder>() {
 
     override fun getItemCount() : Int = listGoods.size
 

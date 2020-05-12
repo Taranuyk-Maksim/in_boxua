@@ -11,10 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.in_boxua.*
 import com.example.in_boxua.models.GoodsCardModel
-import com.example.in_boxua.adapters.GoodsAdapter
+import com.example.in_boxua.adapters.GoodsCatalogAdapter
 import com.example.in_boxua.adapters.PhotoAdapter
 import com.example.in_boxua.adapters.SizeElementAdapter
 import com.example.in_boxua.data.Goods
+import com.example.in_boxua.data.SizeElement
 import com.example.in_boxua.databinding.FragmentGoodsBinding
 
 class GoodsFragment(val goods: Goods, private val recommendList : List<Goods>) : Fragment() {
@@ -50,16 +51,19 @@ class GoodsFragment(val goods: Goods, private val recommendList : List<Goods>) :
         val photos : RecyclerView = view.findViewById(R.id.rv_photos)
 
         val recommend : RecyclerView = view.findViewById(R.id.rv_recomend)
-        val recommendAdapter = GoodsAdapter(TestData.getGoodsList())
+        val recommendAdapter =
+            GoodsCatalogAdapter(TestData.getGoodsList())
 
         recommend.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         recommend.adapter = recommendAdapter
 
         sizes.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         photos.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        recommend.adapter = GoodsAdapter(TestData.getGoodsList())
+        recommend.adapter =
+            GoodsCatalogAdapter(TestData.getGoodsList())
 
-        sizes.adapter = SizeElementAdapter(listSizes)
+        sizes.adapter =
+            SizeElementAdapter(listSizes)
         photos.adapter = PhotoAdapter(listPhotos)
     }
 }

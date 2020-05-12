@@ -1,6 +1,5 @@
 package com.example.in_boxua.adapters
 
-import android.graphics.drawable.AdaptiveIconDrawable
 import android.graphics.drawable.Drawable
 import android.widget.ImageButton
 import android.widget.ImageView

@@ -83,18 +83,18 @@
 
                 <ImageButton
                     android:id="@+id/ib_add_to_favorite"
-                    android:layout_width="wrap_content"
+                    android:layout_width="20dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:background="@drawable/background_stroke"
+                    android:onClick="@{()->model.addToFavorite()}"
                     app:layout_constraintBottom_toBottomOf="@+id/iv_photo"
                     app:layout_constraintEnd_toEndOf="@+id/iv_photo"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/iv_photo"
                     app:layout_constraintTop_toTopOf="@+id/iv_photo"
                     app:layout_constraintVertical_bias="0.0"
-                    android:onClick="@{()->model.addToFavorite()}"
-                    app:srcCompat="@{goods.isFavorites() ? @drawable/ic_favorite : @drawable/ic_favorite_border}"
+                    app:srcCompat="@{goods.isFavorites() ? @drawable/ic_favorite : @drawable/ic_favorite_border, default =@drawable/ic_favorite_border}"
                     tools:ignore="VectorDrawableCompat" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.example.in_boxua
 
 import com.example.in_boxua.data.Goods
+import com.example.in_boxua.data.SizeElement
 
 object TestData {
 

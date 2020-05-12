@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.in_boxua.*
-import com.example.in_boxua.adapters.GoodsFoCartAdapter
+import com.example.in_boxua.adapters.GoodsInCartAdapter
 import com.example.in_boxua.data.Goods
 import com.example.in_boxua.databinding.FragmentCartBinding
 
@@ -57,7 +57,7 @@ class CartFragment: Fragment(){
         //LinearLayout manager not work!к
         rvListGoods.layoutManager = GridLayoutManager(context,1)
         rvListGoods.adapter =
-            GoodsFoCartAdapter(DataSingleton.inCart)
+            GoodsInCartAdapter(DataSingleton.inCart)
         initSum()
     }
 
