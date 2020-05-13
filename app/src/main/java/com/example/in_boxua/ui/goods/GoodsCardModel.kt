@@ -1,9 +1,10 @@
-package com.example.in_boxua.models
+package com.example.in_boxua.ui.goods
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.in_boxua.*
 import com.example.in_boxua.data.Goods
-import com.example.in_boxua.ui.goods.GoodsFragment
+import com.example.in_boxua.utils.AdapterUpdates
+import com.example.in_boxua.utils.DataSingleton
 
 class GoodsCardModel() {
 

@@ -4,14 +4,11 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
-import com.example.in_boxua.DataSingleton
+import com.example.in_boxua.utils.DataSingleton
 import com.example.in_boxua.R
 import com.example.in_boxua.ui.cart.CartFragment
 import com.example.in_boxua.ui.catalog.CatalogFragment
-import com.example.in_boxua.ui.catalog.CatalogViewModel
 import com.example.in_boxua.ui.favorites.FavoritesFragment
-import com.example.in_boxua.utils.InjectorUtils
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 

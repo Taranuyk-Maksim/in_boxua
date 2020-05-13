@@ -1,4 +1,4 @@
-package com.example.in_boxua
+package com.example.in_boxua.utils
 
 interface SumCalc{
     fun calcSum()

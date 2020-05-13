@@ -1,4 +1,4 @@
-package com.example.in_boxua
+package com.example.in_boxua.utils
 
 import androidx.databinding.ObservableDouble
 import com.example.in_boxua.data.Goods

@@ -10,7 +10,7 @@
             type="com.example.in_boxua.data.Goods" />
         <variable
             name="model"
-            type="com.example.in_boxua.models.GoodsCardModel" />
+            type="com.example.in_boxua.ui.goods.GoodsCardModel" />
     </data>
 
 

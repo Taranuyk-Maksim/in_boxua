@@ -1,13 +1,14 @@
-package com.example.in_boxua.models
+package com.example.in_boxua.ui.cart
 
-import com.example.in_boxua.AdapterUpdates
-import com.example.in_boxua.DataSingleton
+import com.example.in_boxua.utils.AdapterUpdates
+import com.example.in_boxua.utils.DataSingleton
 import com.example.in_boxua.data.Goods
-import com.example.in_boxua.SumCalc
+import com.example.in_boxua.utils.SumCalc
 
 class GoodsInCartModel(private val goods : Goods,
                        private val updates: AdapterUpdates,
-                       private val sumCalc: SumCalc) {
+                       private val sumCalc: SumCalc
+) {
 
 
     //Button plas/minus quantity goods from cart

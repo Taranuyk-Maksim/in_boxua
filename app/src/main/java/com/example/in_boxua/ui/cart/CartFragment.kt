@@ -13,6 +13,7 @@ import com.example.in_boxua.*
 import com.example.in_boxua.adapters.GoodsInCartAdapter
 import com.example.in_boxua.data.Goods
 import com.example.in_boxua.databinding.FragmentCartBinding
+import com.example.in_boxua.utils.DataSingleton
 
 class CartFragment: Fragment(){
 

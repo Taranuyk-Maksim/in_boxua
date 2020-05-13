@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.in_boxua.*
-import com.example.in_boxua.models.GoodsCardModel
 import com.example.in_boxua.adapters.GoodsCatalogAdapter
 import com.example.in_boxua.adapters.PhotoAdapter
 import com.example.in_boxua.adapters.SizeElementAdapter

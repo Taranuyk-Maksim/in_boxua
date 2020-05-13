@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.in_boxua.*
 import com.example.in_boxua.adapters.GoodsCatalogAdapter
-import com.example.in_boxua.viewModels.FavoritesViewModel
+import com.example.in_boxua.utils.DataSingleton
 
 class FavoritesFragment : Fragment() {
 

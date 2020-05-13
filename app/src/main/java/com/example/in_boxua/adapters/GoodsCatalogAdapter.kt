@@ -3,8 +3,8 @@ package com.example.in_boxua.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.in_boxua.models.GoodsCardModel
-import com.example.in_boxua.AdapterUpdates
+import com.example.in_boxua.ui.goods.GoodsCardModel
+import com.example.in_boxua.utils.AdapterUpdates
 import com.example.in_boxua.data.Goods
 import com.example.in_boxua.databinding.GoodsCardBinding
 
@@ -24,7 +24,8 @@ class GoodsCatalogAdapter(private var goodsList : List<Goods>) : RecyclerView.Ad
     }
 
    inner class GoodsHolder(private val binding: GoodsCardBinding)
-       : RecyclerView.ViewHolder(binding.root), AdapterUpdates {
+       : RecyclerView.ViewHolder(binding.root),
+       AdapterUpdates {
 
         fun bind(item: Goods){
             val ah = GoodsCardModel(item)

@@ -8,7 +8,7 @@
             type="com.example.in_boxua.data.Goods" />
         <variable
             name="model"
-            type="com.example.in_boxua.models.GoodsInCartModel" />
+            type="com.example.in_boxua.ui.cart.GoodsInCartModel" />
     </data>
     <LinearLayout
         android:layout_width="match_parent"
