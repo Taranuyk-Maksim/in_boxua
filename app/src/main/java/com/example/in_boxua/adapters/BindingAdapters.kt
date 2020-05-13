@@ -5,6 +5,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import com.example.in_boxua.R
 import com.squareup.picasso.Picasso
 
 @BindingAdapter("app:srcCompat")
@@ -19,5 +20,10 @@ fun concat(textView: TextView?,price : Double?, cur : String?) {
 
 @BindingAdapter("app:url")
 fun loadImage(view: ImageView?, url: String?) {
-    Picasso.get().load(url).into(view)
+    Picasso.get()
+        .load(url)
+        .fit()
+        .placeholder(R.drawable.placeholder)
+        .error(R.drawable.image_eror)
+        .into(view)
 }

@@ -19,12 +19,21 @@ class SizeElementAdapter(private val sizeList: List<SizeElement>): RecyclerView.
 
     override fun onBindViewHolder(holder: SizeElementHolder, position: Int) {
         holder.element?.text = sizeList[position].sizeElement
-
+        var clicCuonter : Int = 0
         holder.element?.setOnClickListener {
-            if (sizeList[position].isPress.get()){
-                holder.element?.setBackgroundResource(R.drawable.background_fill_blue)
+            for (s in sizeList){
+                if (s.isPress.get() && s != sizeList[position]){
+                    return@setOnClickListener
+                }
             }
-
+            if (clicCuonter++ == 0){
+                sizeList[position].isPress.set(true)
+                holder.element?.setBackgroundResource(R.drawable.background_fill_blue)
+            }else {
+                sizeList[position].isPress.set(false)
+                holder.element?.setBackgroundResource(R.drawable.button_selector)
+                clicCuonter = 0
+            }
         }
     }
 

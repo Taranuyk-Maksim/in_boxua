@@ -17,8 +17,4 @@ data class Goods(
     var obsPrice : ObservableDouble = ObservableDouble(price!!)
     var isFavorites : ObservableBoolean = ObservableBoolean(false)
     var currency = " грн"
-
-
-
-
 }

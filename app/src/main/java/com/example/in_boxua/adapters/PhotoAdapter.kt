@@ -19,18 +19,19 @@ class PhotoAdapter (private val list: List<String>) : RecyclerView.Adapter<Photo
         return list.size
     }
     override fun onBindViewHolder(holder: PhotoHolder, position: Int) {
-        Picasso.get()
-            .load(list[position])
-            .placeholder(R.drawable.placeholder)
-            .error(R.drawable.image_eror)
-            .fit()
-            .into(holder.photo)
+        holder.loadPhoto(list[position])
     }
 
      class PhotoHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var photo : ImageView? = null
-        init{
-            photo = itemView.findViewById(R.id.iv_photo)
-        }
-    }
+        var photo : ImageView = itemView.findViewById(R.id.iv_photo)
+
+         fun loadPhoto(url : String){
+             Picasso.get()
+                 .load(url)
+                 .fit()
+                 .placeholder(R.drawable.placeholder)
+                 .error(R.drawable.image_eror)
+                 .into(photo)
+         }
+     }
 }

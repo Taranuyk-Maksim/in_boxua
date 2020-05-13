@@ -14,6 +14,8 @@ class GoodsCardModel() {
         this.updates = updates
     }
 
+    fun getMainPhoto() = goods.photos[0]
+
     constructor(goods: Goods) : this(){
         this.goods = goods
     }
