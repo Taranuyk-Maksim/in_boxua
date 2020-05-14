@@ -1,17 +1,20 @@
 package com.example.in_boxua.utils
 
+import com.example.in_boxua.data.Goods
+
 interface SumCalc{
     fun calcSum()
 }
 
-interface AdapterUpdates{
+interface RecyclerViewUpdater{
     fun removeItem()
 }
 
-interface SavesToCart{
-    fun toCart()
+interface CartCallback{
+    fun toCart(goods: Goods)
 }
 
-interface AddsToFavorites {
-    fun toFavorite(isFavorites : Boolean)
+interface FavoritesCallback {
+    fun addFavorite(goods: Goods)
+    fun removeFavorite(goods: Goods)
 }

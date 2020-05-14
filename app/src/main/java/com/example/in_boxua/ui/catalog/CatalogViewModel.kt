@@ -4,8 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.example.in_boxua.data.Goods
 import com.example.in_boxua.data.GoodsRepository
 
-class CatalogViewModel(private val goodsRepository: GoodsRepository)
-    : ViewModel() {
+class CatalogViewModel(private val goodsRepository: GoodsRepository) : ViewModel() {
 
     fun getGoods() = goodsRepository.getGoods()
 

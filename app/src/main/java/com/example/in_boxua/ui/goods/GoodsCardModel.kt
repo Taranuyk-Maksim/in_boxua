@@ -3,18 +3,27 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.in_boxua.*
 import com.example.in_boxua.data.Goods
-import com.example.in_boxua.utils.AdapterUpdates
-import com.example.in_boxua.utils.DataSingleton
+import com.example.in_boxua.utils.FavoritesCallback
+import com.example.in_boxua.utils.RecyclerViewUpdater
+import com.example.in_boxua.utils.CartCallback
 
 class GoodsCardModel() {
 
-    private lateinit var goods : Goods
-    lateinit var updates: AdapterUpdates
+    private lateinit var cart: CartCallback
+    private lateinit var updates: RecyclerViewUpdater
+    private lateinit var favorite: FavoritesCallback
 
-    fun setUpdater(updates: AdapterUpdates) {
+    private lateinit var goods : Goods
+
+    fun setUpdater(updates: RecyclerViewUpdater) {
         this.updates = updates
     }
-
+    fun setSavesToCard(savesToCart: CartCallback) {
+        this.cart.toCart(goods)
+    }
+    fun setAddsToFavorite(savesToFavorites: FavoritesCallback) {
+        this.favorite = savesToFavorites
+    }
     fun getMainPhoto() = goods.photos[0]
 
     constructor(goods: Goods) : this(){
@@ -25,19 +34,19 @@ class GoodsCardModel() {
 
     fun addToCart(){
         if (i++ <= 0){
-            DataSingleton.inCart.add(goods)
+            cart.toCart(goods)
         }
     }
 
     fun addToFavorite(){
         if(goods.isFavorites.get()){
             goods.isFavorites.set(false)
-            DataSingleton.favoritesGoods.remove(goods)
+            favorite.addFavorite(goods)
             updates.removeItem()
 
         }else{
             goods.isFavorites.set(true)
-            DataSingleton.favoritesGoods.add(goods)
+            favorite.removeFavorite(goods)
         }
     }
 

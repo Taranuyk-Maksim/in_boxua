@@ -12,9 +12,9 @@ import com.squareup.picasso.Picasso
 fun bindSrcCompat(imageButton: ImageButton?, drawable: Drawable) {
     imageButton?.setImageDrawable(drawable)
 }
-@BindingAdapter("app:text","app:currency")
-fun concat(textView: TextView?,price : Double?, cur : String?) {
-    val s : String = "$price"+ cur
+@BindingAdapter("app:text")
+fun concat(textView: TextView?,price : Double?) {
+    val s : String = "$price грн"
     textView?.text = s
 }
 

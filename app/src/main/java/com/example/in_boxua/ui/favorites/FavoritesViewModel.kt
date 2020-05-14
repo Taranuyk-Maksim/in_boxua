@@ -4,14 +4,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.in_boxua.utils.DataSingleton
 import com.example.in_boxua.data.Goods
+import com.example.in_boxua.data.GoodsRepository
 
-class FavoritesViewModel : ViewModel() {
+class FavoritesViewModel (private val goodsRepository: GoodsRepository) : ViewModel() {
 
-    private var favoritesGoodsList : MutableLiveData<ArrayList<Goods>> = MutableLiveData()
+    fun getFavoritesGoods() = goodsRepository.getFavoritesList()
 
-    fun getFavoritesGoods() = favoritesGoodsList
+    fun addToFavorites(goods: Goods) = goodsRepository.addToFavorites(goods)
 
-    init {
-        favoritesGoodsList.value = DataSingleton.favoritesGoods
-    }
+    fun removeFavorite(goods: Goods) = goodsRepository.removeFavoritesGoods(goods)
 }

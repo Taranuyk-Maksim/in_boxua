@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.in_boxua.data.Goods
 import com.example.in_boxua.ui.cart.GoodsInCartModel
 import com.example.in_boxua.databinding.CardForCartBinding
-import com.example.in_boxua.utils.AdapterUpdates
+import com.example.in_boxua.utils.RecyclerViewUpdater
 import com.example.in_boxua.utils.DataSingleton
 import com.example.in_boxua.utils.SumCalc
 
@@ -29,7 +29,7 @@ class GoodsInCartAdapter(private val listGoods : List<Goods>
     }
 
     inner class GoodsHolder(private val binding: CardForCartBinding) : RecyclerView.ViewHolder(binding.root),
-        AdapterUpdates,
+        RecyclerViewUpdater,
         SumCalc {
         fun bind(item: Goods){
             binding.goods = item

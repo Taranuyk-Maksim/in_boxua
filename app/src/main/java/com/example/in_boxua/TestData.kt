@@ -12,11 +12,13 @@ object TestData {
         SizeElement("l"),
         SizeElement("xl")
     )
+
     fun getNews() = listOf(
         "https://images.ua.prom.st/1169373685_w640_h640_muzhskie-krossovki-off-white.jpg",
         "https://images.ua.prom.st/1055060649_w640_h640_muzhskie-krossovki-nike.jpg",
         "https://images.ua.prom.st/1764741994_w640_h640_belye-krossovki-zhenskie.jpg"
     )
+
     fun getPhotos() = listOf(
         "https://golos.ua/images/items/2019-03/14/e5VPi4QzRDkESm9G/image/1.png",
         "https://golos.ua/images/items/2019-03/14/e5VPi4QzRDkESm9G/image/1.png",
@@ -24,6 +26,7 @@ object TestData {
         "https://images.ua.prom.st/1055060649_w640_h640_muzhskie-krossovki-nike.jpg",
         "https://images.ua.prom.st/1764741994_w640_h640_belye-krossovki-zhenskie.jpg"
     )
+
     val disct : String  = "Практичная, лёгкая панама от Staff для туризма и повседневной жизни, которая защитит от солнца и влаги, а эксклюзивный принт поможет дополнить твой образ.\n" +
             "\n" +
             "Материал:\n" +

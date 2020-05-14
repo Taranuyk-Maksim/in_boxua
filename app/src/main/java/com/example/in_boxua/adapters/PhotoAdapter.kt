@@ -22,8 +22,9 @@ class PhotoAdapter (private val list: List<String>) : RecyclerView.Adapter<Photo
         holder.loadPhoto(list[position])
     }
 
-     class PhotoHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var photo : ImageView = itemView.findViewById(R.id.iv_photo)
+     inner class PhotoHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+         private var photo : ImageView = itemView.findViewById(R.id.iv_photo)
 
          fun loadPhoto(url : String){
              Picasso.get()

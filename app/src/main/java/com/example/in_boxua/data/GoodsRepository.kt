@@ -5,8 +5,27 @@ class GoodsRepository private constructor(private val goodsDao: FakeGoodsDao) {
     fun addGoods(goods: Goods) {
         goodsDao.addGoods(goods)
     }
+    fun getGoods() = goodsDao.getGoodsList()
 
-    fun getGoods() = goodsDao.getGoodsListCatalog()
+    fun addToFavorites(goods: Goods) {
+        goodsDao.addToFavorites(goods)
+    }
+
+    fun removeFavoritesGoods(goods: Goods) {
+        goodsDao.removeFavoriteGods(goods)
+    }
+
+    fun getFavoritesList() = goodsDao.getFavoritesList()
+
+    fun addToCart(goods: Goods) {
+        goodsDao.addToCart(goods)
+    }
+
+    fun removeInCartGoods(goods: Goods) {
+        goodsDao.removeFavoriteGods(goods)
+    }
+
+    fun getCartList() = goodsDao.getCartList()
 
     companion object {
 

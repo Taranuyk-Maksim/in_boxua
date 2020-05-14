@@ -17,13 +17,20 @@ import com.example.in_boxua.TestData
 import com.example.in_boxua.adapters.GoodsCatalogAdapter
 import com.example.in_boxua.ui.categories.CategoryFragment
 import com.example.in_boxua.adapters.PhotoAdapter
+import com.example.in_boxua.data.Goods
+import com.example.in_boxua.ui.favorites.FavoritesViewModel
+import com.example.in_boxua.utils.FavoritesCallback
 import com.example.in_boxua.utils.InjectorUtils
 
-class CatalogFragment : Fragment() {
+class CatalogFragment : Fragment(), FavoritesCallback {
 
-    private val factory = InjectorUtils.provideGoodsViewModelFactory()
+    private val factory = InjectorUtils.provideCatalogGoodsViewModelFactory()
     private val  viewModel by lazy {ViewModelProviders.of(this,factory)
         .get(CatalogViewModel::class.java)}
+
+    private val factory2 = InjectorUtils.provideFavoritesGoodsViewModelFactory()
+    private val  viewModel2 by lazy {ViewModelProviders.of(this,factory2)
+        .get(FavoritesViewModel::class.java)}
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,11 +52,18 @@ class CatalogFragment : Fragment() {
                 .addToBackStack(CategoryFragment().tag)
                 .commit()
         }
+
         initRecycler(view,TestData.getNews())
 
+        fillGoodsList()
         return view
     }
 
+    fun fillGoodsList() {
+
+            viewModel.addGoods(TestData.getGoodsList()[0])
+
+    }
     private fun initRecycler(view: View, newsList: List<String>){
 
         val news : RecyclerView = view.findViewById(R.id.rv_news)
@@ -62,11 +76,20 @@ class CatalogFragment : Fragment() {
 
         viewModel.getGoods().observe(this, Observer {
             it?.let {
-                val goodsAdapter =
-                    GoodsCatalogAdapter(it)
+                val goodsAdapter = GoodsCatalogAdapter()
+                goodsAdapter.setViewModel(viewModel2)
+                goodsAdapter.setGoodsList(it)
                 listGoods.adapter = goodsAdapter
             }
         })
 
+    }
+
+    override fun addFavorite(goods: Goods) {
+        viewModel.addGoods(goods)
+    }
+
+    override fun removeFavorite(goods: Goods) {
+        viewModel.addGoods(goods)
     }
 }
