@@ -7,17 +7,17 @@ import com.example.in_boxua.ui.catalog.CatalogViewModelFactory
 import com.example.in_boxua.ui.favorites.FavoritesViewModelFactory
 
 object InjectorUtils {
+    private val goodsRepository = GoodsRepository.getInstance(FakeDatabase.getInstance().goodsDao)
 
     fun provideCatalogGoodsViewModelFactory(): CatalogViewModelFactory {
-        val quoteRepository = GoodsRepository.getInstance(FakeDatabase.getInstance().goodsDao)
-        return CatalogViewModelFactory(quoteRepository)
+        return CatalogViewModelFactory(goodsRepository)
     }
     fun provideCartViewModelFactory(): CartViewModelFactory {
-        val quoteRepository = GoodsRepository.getInstance(FakeDatabase.getInstance().goodsDao)
-        return CartViewModelFactory(quoteRepository)
+
+        return CartViewModelFactory(goodsRepository)
     }
     fun provideFavoritesGoodsViewModelFactory(): FavoritesViewModelFactory {
-        val quoteRepository = GoodsRepository.getInstance(FakeDatabase.getInstance().goodsDao)
-        return FavoritesViewModelFactory(quoteRepository)
+
+        return FavoritesViewModelFactory(goodsRepository)
     }
 }

@@ -10,12 +10,13 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.in_boxua.*
-import com.example.in_boxua.adapters.GoodsCatalogAdapter
+import com.example.in_boxua.adapters.GoodsAdapter
 import com.example.in_boxua.adapters.PhotoAdapter
 import com.example.in_boxua.adapters.SizeElementAdapter
 import com.example.in_boxua.data.Goods
 import com.example.in_boxua.data.SizeElement
 import com.example.in_boxua.databinding.FragmentGoodsBinding
+import com.example.in_boxua.ui.catalog.CatalogFragment
 
 class GoodsFragment(val goods: Goods, private val recommendList : List<Goods>) : Fragment() {
 
@@ -27,13 +28,17 @@ class GoodsFragment(val goods: Goods, private val recommendList : List<Goods>) :
 
         val view = inflater.inflate(R.layout.fragment_goods,null)
 
-        initRecycler(view,goods.photos,recommendList,goods.sizeLIst)
+        initRecycler(view,goods.photos,goods.sizeLIst)
 
         val bind : FragmentGoodsBinding = FragmentGoodsBinding.bind(view)
         bind.goods = goods
         bind.handler = GoodsCardModel(goods)
         val backButton : ImageButton = view.findViewById(R.id.iv_back)
+        val favoriteButton : ImageButton = view.findViewById(R.id.ib_add_to_favorite)
 
+        favoriteButton.setOnClickListener {
+
+        }
         backButton.setOnClickListener {
             val manager = (view.context as AppCompatActivity).supportFragmentManager
             manager.popBackStack()
@@ -43,14 +48,13 @@ class GoodsFragment(val goods: Goods, private val recommendList : List<Goods>) :
     }
 
     private fun initRecycler(view: View, listPhotos: List<String>,
-                             listRecommendGoods : List<Goods>,
                              listSizes : List<SizeElement>){
 
         val sizes : RecyclerView = view.findViewById(R.id.rv_sizes)
         val photos : RecyclerView = view.findViewById(R.id.rv_photos)
 
         val recommend : RecyclerView = view.findViewById(R.id.rv_recomend)
-        val recommendAdapter = GoodsCatalogAdapter()
+        val recommendAdapter = GoodsAdapter(CatalogFragment())
         recommendAdapter.setGoodsList(TestData.getGoodsList())
 
         recommend.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
@@ -60,8 +64,7 @@ class GoodsFragment(val goods: Goods, private val recommendList : List<Goods>) :
         photos.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         recommend.adapter = recommendAdapter
 
-        sizes.adapter =
-            SizeElementAdapter(listSizes)
+        sizes.adapter = SizeElementAdapter(listSizes)
         photos.adapter = PhotoAdapter(listPhotos)
     }
 }

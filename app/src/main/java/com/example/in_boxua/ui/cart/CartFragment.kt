@@ -41,6 +41,7 @@ class CartFragment: Fragment(){
 //            info.visibility = View.GONE
 //
 //        }
+
         initRecyclerInCart(view)
         return view
     }
@@ -65,16 +66,13 @@ class CartFragment: Fragment(){
                 if(it.isEmpty()){
                     val sumOrders : CardView = view.findViewById(R.id.cv_orders_sum)
                     sumOrders.visibility = View.GONE
+                }else{
+                    val goodsAdapter =
+                        GoodsInCartAdapter(it)
+                    rvListGoods.adapter = goodsAdapter
                 }
-
-                val goodsAdapter =
-                    GoodsInCartAdapter(it)
-                rvListGoods.adapter = goodsAdapter
                 initSum(it)
             }
         })
-
     }
-
-
 }
