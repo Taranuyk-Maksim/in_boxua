@@ -33,8 +33,6 @@ class GoodsInCartAdapter(private val listGoods : List<Goods>
         SumCalc {
         fun bind(item: Goods){
             binding.goods = item
-            binding.model =
-                GoodsInCartModel(item, this, this)
         }
 
         override fun removeItem() {

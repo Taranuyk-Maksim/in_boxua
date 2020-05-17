@@ -42,7 +42,7 @@ object TestData {
 
     fun getGoodsList() = listOf(
         Goods(
-            1,
+
             "Кросовки Nike 2020",
             200.0,
             disct,
@@ -50,7 +50,7 @@ object TestData {
             getPhotos()
         ),
         Goods(
-            2,
+
             "Кросовки Nike 2020",
             200.0,
             disct,
@@ -58,7 +58,7 @@ object TestData {
             getPhotos()
         ),
         Goods(
-            2,
+
             "Кросовки Nike 2020",
             200.0,
             disct,
@@ -66,7 +66,7 @@ object TestData {
             getPhotos()
         ),
         Goods(
-            2,
+
             "Кросовки Nike 2020",
             200.0,
             disct,
@@ -74,7 +74,7 @@ object TestData {
             getPhotos()
         ),
         Goods(
-            2,
+
             "Кросовки Nike 2020",
             200.0,
             disct,
@@ -82,7 +82,7 @@ object TestData {
             getPhotos()
         ),
         Goods(
-            2,
+
             "Кросовки Nike 2020",
             200.0,
             disct,
@@ -90,7 +90,7 @@ object TestData {
             getPhotos()
         ),
         Goods(
-            2,
+
             "Кросовки Nike 2020",
             200.0,
             disct,
@@ -98,7 +98,7 @@ object TestData {
             getPhotos()
         ),
         Goods(
-            2,
+
             "Кросовки Nike 2020",
             200.0,
             disct,
@@ -106,7 +106,7 @@ object TestData {
             getPhotos()
         ),
         Goods(
-            2,
+
             "Кросовки Nike 2020",
             200.0,
             disct,
@@ -114,7 +114,7 @@ object TestData {
             getPhotos()
         ),
         Goods(
-            2,
+
             "Кросовки Nike 2020",
             200.0,
             disct,
@@ -122,7 +122,7 @@ object TestData {
             getPhotos()
         ),
         Goods(
-            2,
+
             "Кросовки Nike 2020",
             200.0,
             disct,
@@ -130,7 +130,7 @@ object TestData {
             getPhotos()
         ),
         Goods(
-            2,
+
             "Кросовки Nike 2020",
             200.0,
             disct,
@@ -138,7 +138,7 @@ object TestData {
             getPhotos()
         ),
         Goods(
-            2,
+
             "Кросовки Nike 2020",
             200.0,
             disct,
@@ -146,7 +146,7 @@ object TestData {
             getPhotos()
         ),
         Goods(
-            2,
+
             "Кросовки Nike 2020",
             200.0,
             disct,

@@ -61,7 +61,7 @@ class GoodsCardModel() {
                     TestData.getGoodsList()
                 )
             )
-            .addToBackStack(goods.id.toString())
+          //  .addToBackStack(goods.id.toString())
             .commit()
     }
 }

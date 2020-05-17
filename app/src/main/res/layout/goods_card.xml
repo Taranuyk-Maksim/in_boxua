@@ -8,9 +8,6 @@
         <variable
             name="goods"
             type="com.example.in_boxua.data.Goods" />
-        <variable
-            name="model"
-            type="com.example.in_boxua.ui.goods.GoodsCardModel" />
     </data>
 
 
@@ -24,7 +21,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="5dp"
             app:cardCornerRadius="5dp"
-            android:onClick="@{(view)->model.openGoodsPage(view)}"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +42,7 @@
                     android:layout_marginRight="4dp"
                     android:adjustViewBounds="true"
                     android:scaleType="fitStart"
-                    app:url="@{model.getMainPhoto()}"
+                    app:url="@{goods.mainPhoto}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +84,6 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:background="@drawable/background_stroke"
-                    android:onClick="@{()->model.addToFavorite()}"
                     app:layout_constraintBottom_toBottomOf="@+id/iv_photo"
                     app:layout_constraintEnd_toEndOf="@+id/iv_photo"
                     app:layout_constraintHorizontal_bias="1.0"

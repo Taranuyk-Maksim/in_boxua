@@ -1,4 +1,4 @@
-package com.example.in_boxua.adapters
+package com.example.in_boxua.ui.catalog
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,7 +9,7 @@ import com.example.in_boxua.data.Goods
 import com.example.in_boxua.databinding.GoodsCardBinding
 import com.example.in_boxua.utils.FavoritesCallback
 
-class GoodsAdapter() : RecyclerView.Adapter<GoodsAdapter.GoodsHolder>() {
+class CatalogGoodsAdapter(private var fav : FavoritesCallback) : RecyclerView.Adapter<CatalogGoodsAdapter.GoodsHolder>() {
 
     private lateinit var goodsList : List<Goods>
     private var itemPosition : Int = 0
@@ -32,10 +32,20 @@ class GoodsAdapter() : RecyclerView.Adapter<GoodsAdapter.GoodsHolder>() {
         itemPosition = position
     }
 
-   inner class GoodsHolder(private val binding: GoodsCardBinding) : RecyclerView.ViewHolder(binding.root){
+   inner class GoodsHolder(private val binding: GoodsCardBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Goods){
             binding.goods = item
+
+            binding.ibAddToFavorite.setOnClickListener {
+                if(item.isFavorites.get()){
+                    item.isFavorites.set(false)
+                    fav.removeFavorite(item)
+                }else{
+                    item.isFavorites.set(true)
+                    fav.addFavorite(item)
+                }
+            }
         }
    }
 }

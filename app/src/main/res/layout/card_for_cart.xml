@@ -6,9 +6,6 @@
         <variable
             name="goods"
             type="com.example.in_boxua.data.Goods" />
-        <variable
-            name="model"
-            type="com.example.in_boxua.ui.cart.GoodsInCartModel" />
     </data>
     <LinearLayout
         android:layout_width="match_parent"
@@ -58,7 +55,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginLeft="32dp"
                 android:background="@drawable/background_stroke"
-                android:onClick="@{()-> model.goodsPlas()}"
+
                 app:layout_constraintBottom_toBottomOf="@+id/ib_minus"
                 app:layout_constraintStart_toEndOf="@+id/ib_minus"
                 app:layout_constraintTop_toTopOf="@+id/ib_minus"
@@ -75,7 +72,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="3dp"
                 android:background="@drawable/background_stroke"
-                android:onClick="@{()-> model.goodsMinus()}"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toBottomOf="@+id/tv_size"
@@ -104,7 +101,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:background="#FFFFFF"
-                android:onClick="@{() -> model.removeGoods()}"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -116,7 +113,7 @@
                 android:id="@+id/tv_size"
                 style="@style/TextStyle.SizeElement"
                 android:layout_marginTop="16dp"
-                android:text="@{model.getFavoriteSize()}"
+
                 app:layout_constraintEnd_toEndOf="@+id/tv_title"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/imageView"

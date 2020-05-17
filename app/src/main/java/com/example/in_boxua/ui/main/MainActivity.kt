@@ -3,14 +3,23 @@ package com.example.in_boxua.ui.main
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.example.in_boxua.R
 import com.example.in_boxua.ui.cart.CartFragment
 import com.example.in_boxua.ui.catalog.CatalogFragment
 import com.example.in_boxua.ui.favorites.FavoritesFragment
+import com.example.in_boxua.ui.favorites.FavoritesViewModel
+import com.example.in_boxua.utils.InjectorUtils
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
+
+    private var currentFragment = CatalogFragment().tag.toString()
+
+    private val factory = InjectorUtils.provideFavoritesGoodsViewModelFactory()
+    private val  favViewModel by lazy { ViewModelProviders.of(this,factory).get(FavoritesViewModel::class.java)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,13 +37,27 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+        favViewModel.getFavoritesGoods().observe(this, Observer {
+            it?.let {
+                bottomNavigationView.getOrCreateBadge(R.id.menu_favorites).apply {
+                    if(it.isNotEmpty()) {
+                        isVisible = true
+                        number = it.size
+                    }else {
+                        isVisible = false
+                    }
+                }
+            }
+        })
+
     }
 
     private fun loadFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fl_fragment_container, fragment)
-            addToBackStack(fragment.tag)
-            commit()
-        }
+           supportFragmentManager.beginTransaction().apply {
+               replace(R.id.fl_fragment_container, fragment)
+               addToBackStack(fragment.tag)
+               commit()
+           }
+           currentFragment = fragment.tag.toString()
     }
 }

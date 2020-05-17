@@ -54,7 +54,7 @@ class GoodsFragment(val goods: Goods, private val recommendList : List<Goods>) :
         val photos : RecyclerView = view.findViewById(R.id.rv_photos)
 
         val recommend : RecyclerView = view.findViewById(R.id.rv_recomend)
-        val recommendAdapter = GoodsAdapter(CatalogFragment())
+        val recommendAdapter = GoodsAdapter()
         recommendAdapter.setGoodsList(TestData.getGoodsList())
 
         recommend.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
