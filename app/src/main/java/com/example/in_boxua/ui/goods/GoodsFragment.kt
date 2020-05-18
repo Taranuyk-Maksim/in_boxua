@@ -41,12 +41,14 @@ class GoodsFragment(val goods: Goods) : Fragment() {
         initRecycler(view,goods.photos,goods.sizeLIst)
 
         val bind : FragmentGoodsBinding = FragmentGoodsBinding.bind(view)
+
         bind.goods = goods
 
         bind.ibBack.setOnClickListener {
             val manager = (view.context as AppCompatActivity).supportFragmentManager
             manager.popBackStack()
         }
+
         bind.ibFavorite.setOnClickListener {
             if (goods.isFavorites.get()) {
                 goods.isFavorites.set(false)

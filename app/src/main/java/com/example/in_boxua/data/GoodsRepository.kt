@@ -22,7 +22,7 @@ class GoodsRepository private constructor(private val goodsDao: FakeGoodsDao) {
     }
 
     fun removeInCartGoods(goods: Goods) {
-        goodsDao.removeFavoriteGods(goods)
+        goodsDao.removeInCartGods(goods)
     }
 
     fun getCartList() = goodsDao.getCartList()

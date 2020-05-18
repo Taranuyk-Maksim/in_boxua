@@ -54,12 +54,7 @@ class CatalogFragment : Fragment() {
 
         initRecycler(view,TestData.getNews())
 
-        fillGoodsList()
         return view
-    }
-
-    fun fillGoodsList() {
-            viewModel.addGoods(TestData.getGoodsList()[0])
     }
 
     private fun initRecycler(view: View, newsList: List<String>){
