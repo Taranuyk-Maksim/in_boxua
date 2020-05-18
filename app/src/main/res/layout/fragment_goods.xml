@@ -6,9 +6,7 @@
         <variable
             name="goods"
             type="com.example.in_boxua.data.Goods" />
-        <variable
-            name="handler"
-            type="com.example.in_boxua.ui.goods.GoodsCardModel" />
+
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -59,7 +57,7 @@
                         android:layout_height="match_parent">
 
                         <Button
-                            android:id="@+id/button"
+                            android:id="@+id/add_to_cart"
                             style="@style/TextStyle.Button"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -71,7 +69,6 @@
                             android:background="@drawable/background_button_green"
                             android:text="добавить в корзину"
                             android:textColor="#ffffff"
-                            android:onClick="@{() -> handler.addToCart()}"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/rv_sizes">
@@ -92,7 +89,7 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/button" />
+                            app:layout_constraintTop_toBottomOf="@+id/add_to_cart" />
 
                         <TextView
                             android:id="@+id/textView5"
@@ -242,15 +239,14 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginBottom="5dp"
                     android:background="#FFFFFF"
-                    android:onClick="@{()-> handler.addToFavorite()}"
-                    app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+                    app:layout_constraintBottom_toBottomOf="@+id/ib_back"
                     app:layout_constraintEnd_toStartOf="@+id/iv_share"
-                    app:layout_constraintTop_toTopOf="@+id/iv_back"
+                    app:layout_constraintTop_toTopOf="@+id/ib_back"
                     app:srcCompat="@{goods.isFavorites() ? @drawable/ic_favorite : @drawable/ic_favorite_border}"
                     tools:ignore="VectorDrawableCompat" />
 
                 <ImageButton
-                    android:id="@+id/iv_back"
+                    android:id="@+id/ib_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -277,11 +273,11 @@
                     android:layout_marginRight="10dp"
                     android:gravity="center"
                     android:text="@{goods.title}"
-                    app:layout_constraintBottom_toTopOf="@+id/iv_back"
+                    app:layout_constraintBottom_toTopOf="@+id/ib_back"
                     app:layout_constraintEnd_toStartOf="@+id/ib_favorite"
                     app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/iv_back"
-                    app:layout_constraintTop_toTopOf="@+id/iv_back"
+                    app:layout_constraintStart_toEndOf="@+id/ib_back"
+                    app:layout_constraintTop_toTopOf="@+id/ib_back"
                     app:layout_constraintVertical_bias="0.476" />
 
                 <TextView
@@ -291,7 +287,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="@string/category"
-                    app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+                    app:layout_constraintBottom_toBottomOf="@+id/ib_back"
                     app:layout_constraintEnd_toEndOf="@+id/tv_title"
                     app:layout_constraintStart_toStartOf="@+id/tv_title"
                     app:layout_constraintTop_toBottomOf="@+id/tv_title" />

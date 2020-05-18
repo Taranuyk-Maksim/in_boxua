@@ -20,7 +20,7 @@ class FavoritesFragment : Fragment(){
 
     private val factory = InjectorUtils.provideFavoritesGoodsViewModelFactory()
     private val  favViewModel by lazy {ViewModelProviders.of(this,factory).get(FavoritesViewModel::class.java)}
-    private val favoriteAdapter = GoodsAdapter()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,51 +29,33 @@ class FavoritesFragment : Fragment(){
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_favorites,null)
+        val status : TextView = view.findViewById(R.id.tv_empty_favorites)
         favViewModel.getFavoritesGoods().observe(viewLifecycleOwner, Observer {
             it?.let {
                 if(it.isNotEmpty()){
-                    val status : TextView = view.findViewById(R.id.tv_empty_favorites)
                     status.visibility = View.GONE
                     initRecycler(view)
+                } else {
+                    status.visibility = View.VISIBLE
                 }
             }
         })
-//        if(DataSingleton.favoritesGoods.isNotEmpty()){
-//            val status : TextView = view.findViewById(R.id.tv_empty_favorites)
-//            status.visibility = View.GONE
-//            initRecycler(view)
-//        }
-      //  addTest()
+
         return view
     }
 
-    fun addTest() {
-        for(g in TestData.getGoodsList()) {
-            favViewModel.addToFavorites(g)
-        }
-    }
     private fun initRecycler(view: View){
 
         val favorites : RecyclerView = view.findViewById(R.id.rv_favorites)
-        val status : TextView = view.findViewById(R.id.tv_empty_favorites)
-
+        val favoriteAdapter = GoodsAdapter(FavoriteModel(favViewModel),view)
         favorites.layoutManager = GridLayoutManager(context,2)
         favorites.adapter = favoriteAdapter
+
         favViewModel.getFavoritesGoods().observe(viewLifecycleOwner, Observer {
             it?.let {
                     favoriteAdapter.setGoodsList(it)
+                    favoriteAdapter.notifyItemRemoved(favoriteAdapter.getPosition())
             }
         })
-    }
-
-    inner class Actions : FavoritesCallback {
-        override fun addFavorite(goods: Goods) {
-            favViewModel.addToFavorites(goods)
-        }
-
-        override fun removeFavorite(goods: Goods) {
-            favViewModel.removeFavorite(goods)
-        }
-
     }
 }

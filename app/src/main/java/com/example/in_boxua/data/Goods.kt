@@ -15,5 +15,5 @@ data class Goods(
     var quantity : ObservableInt = ObservableInt(1)
     var obsPrice : ObservableDouble = ObservableDouble(price!!)
     var isFavorites : ObservableBoolean = ObservableBoolean(false)
-
+    var isInCart : ObservableBoolean = ObservableBoolean(false)
 }

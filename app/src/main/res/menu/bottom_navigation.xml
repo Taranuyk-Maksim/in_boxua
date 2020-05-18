@@ -6,7 +6,7 @@
         android:title="@string/bn_catalog"
         />
     <item
-        android:id="@+id/menu_trash"
+        android:id="@+id/menu_cart"
         android:icon="@drawable/ic_menu_shopping_cart"
         android:title="@string/bn_trash"
         />

@@ -67,14 +67,13 @@ class CatalogFragment : Fragment() {
         val news : RecyclerView = view.findViewById(R.id.rv_news)
         val listGoods : RecyclerView = view.findViewById(R.id.rv_list_goods)
         val photoAdapter = PhotoAdapter(newsList)
-
+        val goodsAdapter = GoodsAdapter(CatalogModel(favViewModel), view)
         news.layoutManager = LinearLayoutManager(context)
         news.adapter = photoAdapter
         listGoods.layoutManager = GridLayoutManager(context,2)
 
         viewModel.getGoods().observe(viewLifecycleOwner, Observer {
             it?.let {
-                val goodsAdapter = CatalogGoodsAdapter(CatalogModel(favViewModel))
                 goodsAdapter.setGoodsList(it)
                 listGoods.adapter = goodsAdapter
             }

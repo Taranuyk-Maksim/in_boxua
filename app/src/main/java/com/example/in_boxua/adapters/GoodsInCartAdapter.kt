@@ -10,8 +10,12 @@ import com.example.in_boxua.utils.RecyclerViewUpdater
 import com.example.in_boxua.utils.DataSingleton
 import com.example.in_boxua.utils.SumCalc
 
-class GoodsInCartAdapter(private val listGoods : List<Goods>
-    ) : RecyclerView.Adapter<GoodsInCartAdapter.GoodsHolder>() {
+class GoodsInCartAdapter: RecyclerView.Adapter<GoodsInCartAdapter.GoodsHolder>() {
+    private lateinit var listGoods: List<Goods>
+
+    fun setGoodsList(listGoods: List<Goods>) {
+        this.listGoods = listGoods
+    }
 
     override fun getItemCount() : Int = listGoods.size
 
@@ -28,24 +32,24 @@ class GoodsInCartAdapter(private val listGoods : List<Goods>
         itemPosition = position
     }
 
-    inner class GoodsHolder(private val binding: CardForCartBinding) : RecyclerView.ViewHolder(binding.root),
-        RecyclerViewUpdater,
-        SumCalc {
+    fun calcSum() : Double {
+        var sum : Double = 0.0
+        for (g in listGoods) {
+            sum += g.obsPrice.get()
+        }
+        return sum
+    }
+
+    inner class GoodsHolder(private val binding: CardForCartBinding) : RecyclerView.ViewHolder(binding.root){
+
         fun bind(item: Goods){
             binding.goods = item
         }
 
-        override fun removeItem() {
+        fun removeItem() {
             notifyItemRemoved(itemPosition)
         }
 
-        override fun calcSum() {
-            var sum : Double = 0.0
-            for (g in listGoods) {
-                sum += g.obsPrice.get()
-            }
-            DataSingleton.sumAllGoodsInCart.set(sum)
-        }
-    }
 
+    }
 }
