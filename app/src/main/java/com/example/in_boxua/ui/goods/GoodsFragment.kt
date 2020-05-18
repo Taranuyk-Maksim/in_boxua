@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -59,15 +60,19 @@ class GoodsFragment(val goods: Goods) : Fragment() {
             }
         }
 
+        val gg : Button = view.findViewById(R.id.add_to_cart)
         bind.addToCart.setOnClickListener {
+            it as Button
             if (goods.isInCart.get()) {
                 goods.isInCart.set(false)
                 cartViewModel.remove(goods)
                 it.setBackgroundColor(Color.GRAY)
+                it.text = "Добавить еще раз?"
             } else {
                 goods.isInCart.set(true)
                 cartViewModel.addToCart(goods)
-                it.setBackgroundColor(Color.GREEN)
+                it.setBackgroundColor(Color.BLUE)
+                it.text = "В корзине"
             }
 
         }
