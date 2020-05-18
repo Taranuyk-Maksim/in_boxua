@@ -54,7 +54,7 @@ class CartFragment: Fragment(){
         val sum : TextView = view.findViewById(R.id.tv_sum)
         rvListGoods.layoutManager = GridLayoutManager(context,1)
 
-        val goodsAdapter = GoodsInCartAdapter()
+        val goodsAdapter = GoodsInCartAdapter(view)
         rvListGoods.adapter = goodsAdapter
         viewModel.getCartList().observe(viewLifecycleOwner, Observer {
             it?.let {

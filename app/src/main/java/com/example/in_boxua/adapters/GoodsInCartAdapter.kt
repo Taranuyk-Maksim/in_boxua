@@ -1,16 +1,20 @@
 package com.example.in_boxua.adapters
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.in_boxua.R
 import com.example.in_boxua.data.Goods
 import com.example.in_boxua.ui.cart.GoodsInCartModel
 import com.example.in_boxua.databinding.CardForCartBinding
+import com.example.in_boxua.ui.goods.GoodsFragment
 import com.example.in_boxua.utils.RecyclerViewUpdater
 import com.example.in_boxua.utils.DataSingleton
 import com.example.in_boxua.utils.SumCalc
 
-class GoodsInCartAdapter: RecyclerView.Adapter<GoodsInCartAdapter.GoodsHolder>() {
+class GoodsInCartAdapter (private val view : View): RecyclerView.Adapter<GoodsInCartAdapter.GoodsHolder>() {
     private lateinit var listGoods: List<Goods>
 
     fun setGoodsList(listGoods: List<Goods>) {
@@ -44,12 +48,36 @@ class GoodsInCartAdapter: RecyclerView.Adapter<GoodsInCartAdapter.GoodsHolder>()
 
         fun bind(item: Goods){
             binding.goods = item
+
+            binding.cvCardInCart.setOnClickListener{
+                val manager = (view.context as AppCompatActivity).supportFragmentManager
+                manager
+                    .beginTransaction()
+                    .replace(
+                        R.id.fl_fragment_container,
+                        GoodsFragment(
+                            item
+                        )
+                    )
+                    .addToBackStack("itemId.toString()")
+                    .commit()
+            }
+
+            binding.ibMinus.setOnClickListener {
+                if(item.quantity.get() > 1){
+                    item.obsPrice.set(item.obsPrice.get() - item.price)
+                    item.quantity.set(item.quantity.get() - 1)
+                }
+            }
+
+            binding.ibPlus.setOnClickListener {
+                item.obsPrice.set(item.obsPrice.get() + item.price)
+                item.quantity.set(item.quantity.get() + 1)
+            }
+
+            binding.ibRemove.setOnClickListener {
+
+            }
         }
-
-        fun removeItem() {
-            notifyItemRemoved(itemPosition)
-        }
-
-
     }
 }

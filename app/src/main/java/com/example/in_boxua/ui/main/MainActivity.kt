@@ -65,8 +65,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
-
-
     }
 
     private fun loadFragment(fragment: Fragment) {

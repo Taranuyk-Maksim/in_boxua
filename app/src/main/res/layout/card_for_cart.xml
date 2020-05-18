@@ -13,6 +13,7 @@
         android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cv_card_in_cart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp">
@@ -22,7 +23,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/iv_photo"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginStart="4dp"
@@ -33,10 +34,10 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/snekers_photo" />
+                app:url="@{goods.mainPhoto}" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/tv_quantity"
                 style="@style/TextStyle.Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -74,7 +75,7 @@
                 android:background="@drawable/background_stroke"
 
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintStart_toEndOf="@+id/iv_photo"
                 app:layout_constraintTop_toBottomOf="@+id/tv_size"
                 app:srcCompat="@drawable/ic_minus"
                 tools:ignore="VectorDrawableCompat" />
@@ -88,20 +89,19 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="3dp"
                 android:text="@{goods.title, default=TotleForTextPreview}"
-                app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+                app:layout_constraintEnd_toStartOf="@+id/ib_remove"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintStart_toEndOf="@+id/iv_photo"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/ib_remove"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:background="#FFFFFF"
-
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -113,10 +113,10 @@
                 android:id="@+id/tv_size"
                 style="@style/TextStyle.SizeElement"
                 android:layout_marginTop="16dp"
-
+                android:text="@{goods.pinedSize}"
                 app:layout_constraintEnd_toEndOf="@+id/tv_title"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintStart_toEndOf="@+id/iv_photo"
                 app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
             <TextView
@@ -130,7 +130,7 @@
                 android:layout_marginBottom="3dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+                app:layout_constraintTop_toBottomOf="@+id/ib_remove"
                 app:layout_constraintVertical_bias="0.94"
                 app:text="@{goods.obsPrice}" />
 

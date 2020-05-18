@@ -6,14 +6,15 @@ import androidx.databinding.ObservableInt
 
 data class Goods(
     val title: String?,
-    val price: Double?,
+    val price: Double,
     val description: String?,
     val sizeLIst: List<SizeElement>,
     val photos: List<String>
 ){
     val mainPhoto = photos[0]
     var quantity : ObservableInt = ObservableInt(1)
-    var obsPrice : ObservableDouble = ObservableDouble(price!!)
+    var obsPrice : ObservableDouble = ObservableDouble(price)
     var isFavorites : ObservableBoolean = ObservableBoolean(false)
     var isInCart : ObservableBoolean = ObservableBoolean(false)
+    var pinedSize : String = "XX"
 }
