@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.ObservableDouble
 import androidx.recyclerview.widget.RecyclerView
 import com.example.in_boxua.R
 import com.example.in_boxua.data.Goods
@@ -19,13 +20,14 @@ import com.example.in_boxua.utils.SumCalc
 class GoodsInCartAdapter (private val view : View, private val viewModel: CartViewModel): RecyclerView.Adapter<GoodsInCartAdapter.GoodsHolder>() {
     private lateinit var listGoods: List<Goods>
 
+    private var itemPosition = 0
+    private var sum = ObservableDouble(0.0)
+
     fun setGoodsList(listGoods: List<Goods>) {
         this.listGoods = listGoods
     }
 
     override fun getItemCount() : Int = listGoods.size
-
-    private var itemPosition = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GoodsHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -38,10 +40,9 @@ class GoodsInCartAdapter (private val view : View, private val viewModel: CartVi
         itemPosition = position
     }
 
-    fun calcSum() : Double {
-        var sum : Double = 0.0
+    fun calcSum() : ObservableDouble{
         for (g in listGoods) {
-            sum += g.obsPrice.get()
+            sum.set(g.obsPrice.get())
         }
         return sum
     }
@@ -67,12 +68,14 @@ class GoodsInCartAdapter (private val view : View, private val viewModel: CartVi
 
             binding.ibMinus.setOnClickListener {
                 if(item.quantity.get() > 1){
+                    calcSum()
                     item.obsPrice.set(item.obsPrice.get() - item.price)
                     item.quantity.set(item.quantity.get() - 1)
                 }
             }
 
             binding.ibPlus.setOnClickListener {
+                calcSum()
                 item.obsPrice.set(item.obsPrice.get() + item.price)
                 item.quantity.set(item.quantity.get() + 1)
             }
