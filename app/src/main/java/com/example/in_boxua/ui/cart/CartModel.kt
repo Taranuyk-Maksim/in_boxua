@@ -3,17 +3,18 @@ package com.example.in_boxua.ui.cart
 import androidx.lifecycle.ViewModelProviders
 import com.example.in_boxua.data.Goods
 import com.example.in_boxua.ui.favorites.FavoritesViewModel
+import com.example.in_boxua.utils.CartCallback
 import com.example.in_boxua.utils.FavoritesCallback
 import com.example.in_boxua.utils.InjectorUtils
 
-class CartModel(private var viewModel: FavoritesViewModel) : FavoritesCallback {
+class CartModel(private var viewModel: CartViewModel) : CartCallback {
 
-    override fun addFavorite(goods: Goods) {
-        viewModel.addToFavorites(goods)
+    override fun addToCart(goods: Goods) {
+        viewModel.addToCart(goods)
     }
 
-    override fun removeFavorite(goods: Goods) {
-        viewModel.removeFavorite(goods)
+    override fun remove(goods: Goods) {
+        viewModel.remove(goods)
     }
 
 }

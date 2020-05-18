@@ -9,12 +9,14 @@ import com.example.in_boxua.R
 import com.example.in_boxua.data.Goods
 import com.example.in_boxua.ui.cart.GoodsInCartModel
 import com.example.in_boxua.databinding.CardForCartBinding
+import com.example.in_boxua.ui.cart.CartModel
+import com.example.in_boxua.ui.cart.CartViewModel
 import com.example.in_boxua.ui.goods.GoodsFragment
 import com.example.in_boxua.utils.RecyclerViewUpdater
 import com.example.in_boxua.utils.DataSingleton
 import com.example.in_boxua.utils.SumCalc
 
-class GoodsInCartAdapter (private val view : View): RecyclerView.Adapter<GoodsInCartAdapter.GoodsHolder>() {
+class GoodsInCartAdapter (private val view : View, private val viewModel: CartViewModel): RecyclerView.Adapter<GoodsInCartAdapter.GoodsHolder>() {
     private lateinit var listGoods: List<Goods>
 
     fun setGoodsList(listGoods: List<Goods>) {
@@ -76,7 +78,7 @@ class GoodsInCartAdapter (private val view : View): RecyclerView.Adapter<GoodsIn
             }
 
             binding.ibRemove.setOnClickListener {
-
+                CartModel(viewModel).remove(item)
             }
         }
     }

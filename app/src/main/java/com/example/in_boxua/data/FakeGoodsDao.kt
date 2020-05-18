@@ -48,7 +48,7 @@ class FakeGoodsDao {
     }
 
     fun removeInCartGods(goods: Goods) {
-        goodsCartList.add(goods)
+        goodsCartList.remove(goods)
         goodsCartLiveData.value = goodsCartList
     }
 

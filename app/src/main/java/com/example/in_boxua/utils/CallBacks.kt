@@ -10,11 +10,14 @@ interface RecyclerViewUpdater{
     fun removeItem()
 }
 
-interface CartCallback{
-    fun toCart(goods: Goods)
-}
+
 
 interface FavoritesCallback {
     fun addFavorite(goods: Goods)
     fun removeFavorite(goods: Goods)
+}
+
+interface CartCallback {
+    fun addToCart(goods: Goods)
+    fun remove(goods: Goods)
 }
