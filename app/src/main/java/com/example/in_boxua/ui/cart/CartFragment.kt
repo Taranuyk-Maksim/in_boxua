@@ -47,19 +47,18 @@ class CartFragment: Fragment(){
         return view
     }
 
-
     private fun initRecycler(view: View){
         val rvListGoods : RecyclerView = view.findViewById(R.id.rv_in_cart)
-        //LinearLayoutManager is not work!
         val sum : TextView = view.findViewById(R.id.tv_sum)
+        val goodsAdapter = GoodsInCartAdapter(view,viewModel)
+
         rvListGoods.layoutManager = GridLayoutManager(context,1)
 
-        val goodsAdapter = GoodsInCartAdapter(view,viewModel)
         rvListGoods.adapter = goodsAdapter
         viewModel.getCartList().observe(viewLifecycleOwner, Observer {
             it?.let {
                 goodsAdapter.setGoodsList(it)
-                sum.text = goodsAdapter.calcSum().toString() + " грн"
+                sum.text = goodsAdapter.calcSum().get().toString()
             }
         })
     }

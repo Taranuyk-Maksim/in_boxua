@@ -1,6 +1,7 @@
 package com.example.in_boxua.adapters
 
 import android.graphics.drawable.Drawable
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
@@ -12,6 +13,17 @@ import com.squareup.picasso.Picasso
 fun bindSrcCompat(imageButton: ImageButton?, drawable: Drawable) {
     imageButton?.setImageDrawable(drawable)
 }
+
+@BindingAdapter("app:srcCompat")
+fun bindSrcCompat(button: Button ?, drawable: Drawable) {
+    button?.background = drawable
+}
+
+@BindingAdapter("app:btnText")
+fun setText(button: Button ?, string: String) {
+    button?.text = string
+}
+
 @BindingAdapter("app:text")
 fun concat(textView: TextView?,price : Double?) {
     val s : String = "$price грн"
