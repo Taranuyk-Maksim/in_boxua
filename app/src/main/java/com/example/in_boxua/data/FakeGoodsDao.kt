@@ -15,7 +15,7 @@ class FakeGoodsDao {
     private val goodsCartLiveData = MutableLiveData<List<Goods>>()
 
     init {
-        goodsList.addAll(TestData.getGoodsList())
+        goodsList.addAll(TestData.getCatalogGoods())
         goodsFavoritesLiveData.value = goodsFavoriteList
         goodsListLiveData.value = goodsList
         goodsCartLiveData.value = goodsCartList
@@ -57,7 +57,7 @@ class FakeGoodsDao {
 
     //Start init example goods
     fun initE(){
-        goodsList.addAll(TestData.getGoodsList())
+        goodsList.addAll(TestData.getCatalogGoods())
     }
 
 

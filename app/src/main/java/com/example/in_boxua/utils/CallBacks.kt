@@ -11,7 +11,6 @@ interface RecyclerViewUpdater{
 }
 
 
-
 interface FavoritesCallback {
     fun addFavorite(goods: Goods)
     fun removeFavorite(goods: Goods)

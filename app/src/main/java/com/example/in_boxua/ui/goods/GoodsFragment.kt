@@ -1,12 +1,9 @@
 package com.example.in_boxua.ui.goods
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
@@ -20,7 +17,6 @@ import com.example.in_boxua.data.Goods
 import com.example.in_boxua.data.SizeElement
 import com.example.in_boxua.databinding.FragmentGoodsBinding
 import com.example.in_boxua.ui.cart.CartViewModel
-import com.example.in_boxua.ui.catalog.CatalogFragment
 import com.example.in_boxua.ui.favorites.FavoritesViewModel
 import com.example.in_boxua.utils.InjectorUtils
 
@@ -81,7 +77,7 @@ class GoodsFragment(val goods: Goods) : Fragment() {
 
         val recommend : RecyclerView = view.findViewById(R.id.rv_recomend)
         val recommendAdapter = GoodsAdapter(GoodsModel(favViewModel),view)
-        recommendAdapter.setGoodsList(TestData.getGoodsList())
+        recommendAdapter.setGoodsList(TestData.getCatalogGoods())
 
         recommend.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         recommend.adapter = recommendAdapter

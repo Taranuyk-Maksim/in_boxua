@@ -13,14 +13,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp">
+        android:layout_margin="4dp">
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_goods"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="5dp"
-            app:cardCornerRadius="5dp"
+            android:layout_margin="4dp"
+            app:cardCornerRadius="4dp"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +50,6 @@
 
                 <TextView
                     android:id="@+id/tv_title"
-                    style="@style/TextStyle.Title.Card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
@@ -58,6 +57,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
+                    style="@style/TextStyle.Title.Card"
                     android:text="@{goods.title}"
                     app:layout_constraintEnd_toEndOf="@+id/iv_photo"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -90,7 +90,7 @@
                     app:layout_constraintStart_toStartOf="@+id/iv_photo"
                     app:layout_constraintTop_toTopOf="@+id/iv_photo"
                     app:layout_constraintVertical_bias="0.0"
-                    app:srcCompat="@{goods.isFavorites() ? @drawable/ic_favorite : @drawable/ic_favorite_border, default =@drawable/ic_favorite_border}"
+                    app:srcCompat="@{goods.isFavorites() ? @drawable/ic_favorite : @drawable/ic_favorite_border}"
                     tools:ignore="VectorDrawableCompat" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

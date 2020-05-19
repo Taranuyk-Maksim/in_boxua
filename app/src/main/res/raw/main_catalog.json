@@ -1,93 +1,17 @@
 {
-  "news_list" : [
-    "https://images.ua.prom.st/1226436357_w640_h640_1226436357.jpg",
-    "https://images.ua.prom.st/1854410440_w640_h640_krossovki-xiaomi-mijia.jpg",
-    "https://krosogolik.com/image/cache/catalog/men-nike/7/281-1000x1340.jpg"
+  "title": "Футболка Staff colorblock purple",
+  "price": 290.90,
+  "description": "Шорты от Staff – идеальное решение для спорта и отдыха с максимальным комфортом при носке.\n\nМатериал:\n- 100% коттон.\n\nДетали и крой:\n- классический крой;\n- три прорезных кармана: два спереди, один сзади;\n- эластичный пояс в рубчик на шнурке для надёжной посадки по фигуре;\n- бирка с фирменным логотипом Staff на заднем кармане.\n\nСезон:\n- весна/лето.\n\nЦвет:\n- чёрный.\n\nУход:\n- стирка в обычном режиме при температуре не выше 30°C, без отжима;\n- отбеливание запрещено;\n- сушить в подвешенном состоянии, без применения искусственной сушки.",
+  "sizes": [
+    "xs",
+    "s",
+    "m",
+    "l",
+    "xl"
   ],
-  "DayOfWeak" : "Понедельнк",
-  "monday" : [
-    {
-      "time": "8.00 - 9.40",
-      "lessonsName": "Тест пара 11111",
-      "auditory": "101 р",
-      "type": "лекция",
-      "professors": "Головань К.В."
-    },
-    {
-      "time": "10.00 - 11.20",
-      "lessonsName": "Тест пара 22222",
-      "auditory": "fsdfdsf р",
-      "type": "fsdfsd",
-      "professors": "fsdfsda К.В."
-    },
-    {
-      "time": "12.00 - 11.20",
-      "lessonsName": "Тест пара 33333",
-      "auditory": "fsdfdsf р",
-      "type": "fsdfsd",
-      "professors": "fsdfsda К.В."
-    },
-    {
-      "time": "12.00 - 11.20",
-      "lessonsName": "Тест пара 33333",
-      "auditory": "fsdfdsf р",
-      "type": "fsdfsd",
-      "professors": "fsdfsda К.В."
-    },
-    {
-      "time": "12.00 - 11.20",
-      "lessonsName": "Тест пара 33333",
-      "auditory": "fsdfdsf р",
-      "type": "fsdfsd",
-      "professors": "fsdfsda К.В."
-    }
-  ],
-  "еuesday" : [
-    {
-      "time": "10 - 22",
-      "lessonsName": "fsd мобыльних ПЗ",
-      "auditory": "101 р",
-      "type": "лекция",
-      "professors": "Головань К.В."
-    },
-    {
-      "time": "10.0 - 11.20",
-      "lessonsName": "Розробка vdvcvsdfds ПЗ",
-      "auditory": "fsdfdsf р",
-      "type": "fsdfsd",
-      "professors": "fsdfsda К.В."
-    }
-  ],
-  "еuesday" : [
-    {
-      "time": "10 - 22",
-      "lessonsName": "fsd мобыльних ПЗ",
-      "auditory": "101 р",
-      "type": "лекция",
-      "professors": "Головань К.В."
-    },
-    {
-      "time": "10.0 - 11.20",
-      "lessonsName": "Розробка vdvcvsdfds ПЗ",
-      "auditory": "fsdfdsf р",
-      "type": "fsdfsd",
-      "professors": "fsdfsda К.В."
-    }
-  ],
-  "еuesday" : [
-    {
-      "time": "10 - 22",
-      "lessonsName": "fsd мобыльних ПЗ",
-      "auditory": "101 р",
-      "type": "лекция",
-      "professors": "Головань К.В."
-    },
-    {
-      "time": "10.0 - 11.20",
-      "lessonsName": "Розробка vdvcvsdfds ПЗ",
-      "auditory": "fsdfdsf р",
-      "type": "fsdfsd",
-      "professors": "fsdfsda К.В."
-    }
+  "photos": [
+    "https://static.staff-clothes.com/uploads/media/image_product/0001/40/9bf50730c89e5e3845fc3a350310cd8666f63cc9.jpeg",
+    "https://static.staff-clothes.com/uploads/media/image_product/0001/40/7efac0e7a02e66f05436d69eb267eac27ff68747.jpeg",
+    "https://static.staff-clothes.com/uploads/media/image_product/0001/40/133ebf1fc6ba07da9371d1087d7ca5c380b6d35b.jpeg"
   ]
 }
