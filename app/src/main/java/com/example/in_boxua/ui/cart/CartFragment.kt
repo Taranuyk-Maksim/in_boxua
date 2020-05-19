@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.in_boxua.*
 import com.example.in_boxua.adapters.GoodsInCartAdapter
+import com.example.in_boxua.utils.DataSingleton
 import com.example.in_boxua.utils.InjectorUtils
 
 class CartFragment: Fragment(){
@@ -49,7 +50,7 @@ class CartFragment: Fragment(){
 
     private fun initRecycler(view: View){
         val rvListGoods : RecyclerView = view.findViewById(R.id.rv_in_cart)
-        val sum : TextView = view.findViewById(R.id.tv_sum)
+
         val goodsAdapter = GoodsInCartAdapter(view,viewModel)
 
         rvListGoods.layoutManager = GridLayoutManager(context,1)
@@ -58,7 +59,7 @@ class CartFragment: Fragment(){
         viewModel.getCartList().observe(viewLifecycleOwner, Observer {
             it?.let {
                 goodsAdapter.setGoodsList(it)
-                sum.text = goodsAdapter.calcSum().get().toString()
+                goodsAdapter.calcSum()
             }
         })
     }

@@ -33,9 +33,4 @@ class GoodsInCartModel(private val goods : Goods,
         }
         return "XX"
     }
-
-    fun removeGoods(){
-        DataSingleton.inCart.remove(goods)
-        updates.removeItem()
-    }
 }

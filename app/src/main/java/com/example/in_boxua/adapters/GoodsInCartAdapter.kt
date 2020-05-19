@@ -21,7 +21,6 @@ class GoodsInCartAdapter (private val view : View, private val viewModel: CartVi
     private lateinit var listGoods: List<Goods>
 
     private var itemPosition = 0
-    private var sum = ObservableDouble(0.0)
 
     fun setGoodsList(listGoods: List<Goods>) {
         this.listGoods = listGoods
@@ -36,15 +35,17 @@ class GoodsInCartAdapter (private val view : View, private val viewModel: CartVi
     }
 
     override fun onBindViewHolder(holder: GoodsHolder, position: Int) {
+        calcSum()
         holder.bind(listGoods[position])
         itemPosition = position
     }
 
-    fun calcSum() : ObservableDouble{
+    fun calcSum() {
+        var sum : Double = 0.0
         for (g in listGoods) {
-            sum.set(g.obsPrice.get())
+           sum += g.obsPrice.get()
         }
-        return sum
+        DataSingleton.sumAllGoodsInCart.set(sum)
     }
 
     inner class GoodsHolder(private val binding: CardForCartBinding) : RecyclerView.ViewHolder(binding.root){
