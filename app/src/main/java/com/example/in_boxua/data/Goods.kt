@@ -11,7 +11,7 @@ data class Goods(
     val sizeLIst: List<SizeElement>,
     val photos: List<String>
 ){
-    val mainPhoto = photos[0]
+    val mainPhoto = photos.first()
     var quantity : ObservableInt = ObservableInt(1)
     var obsPrice : ObservableDouble = ObservableDouble(price)
     var isFavorites : ObservableBoolean = ObservableBoolean(false)

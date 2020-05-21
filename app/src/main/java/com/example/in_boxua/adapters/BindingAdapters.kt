@@ -26,13 +26,9 @@ fun setText(button: Button ?, string: String) {
 }
 
 @BindingAdapter("app:text")
-fun concat(textView: TextView?,price : ObservableDouble?) {
-    val s : String = "${price?.get()} грн"
-    textView?.text = s
-}
-@BindingAdapter("app:text")
 fun concat(textView: TextView?,price : Double?) {
-    val s : String = "$price грн"
+    val sum = String.format("%.2f",price)
+    val s : String = "$sum грн"
     textView?.text = s
 }
 @BindingAdapter("app:url")

@@ -4,7 +4,5 @@ import androidx.databinding.ObservableDouble
 import com.example.in_boxua.data.Goods
 
 object DataSingleton{
-
-    val sumAllGoodsInCart = ObservableDouble(10.0)
-
+    val sumAllGoodsInCart = ObservableDouble(12.0)
 }

@@ -1,9 +1,8 @@
 package com.example.in_boxua.utils
-
 import com.example.in_boxua.data.Goods
 
 interface SumCalc{
-    fun calcSum()
+    fun calcSum(list : List<Goods>)
 }
 
 interface RecyclerViewUpdater{

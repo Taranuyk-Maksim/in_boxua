@@ -4,20 +4,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.ObservableDouble
 import androidx.recyclerview.widget.RecyclerView
 import com.example.in_boxua.R
 import com.example.in_boxua.data.Goods
-import com.example.in_boxua.ui.cart.GoodsInCartModel
 import com.example.in_boxua.databinding.CardForCartBinding
 import com.example.in_boxua.ui.cart.CartModel
 import com.example.in_boxua.ui.cart.CartViewModel
 import com.example.in_boxua.ui.goods.GoodsFragment
-import com.example.in_boxua.utils.RecyclerViewUpdater
 import com.example.in_boxua.utils.DataSingleton
-import com.example.in_boxua.utils.SumCalc
 
-class GoodsInCartAdapter (private val view : View, private val viewModel: CartViewModel): RecyclerView.Adapter<GoodsInCartAdapter.GoodsHolder>() {
+class GoodsCartAdapter (private val view : View, private val viewModel: CartViewModel): RecyclerView.Adapter<GoodsCartAdapter.GoodsHolder>() {
     private lateinit var listGoods: List<Goods>
 
     private var itemPosition = 0
@@ -35,7 +31,6 @@ class GoodsInCartAdapter (private val view : View, private val viewModel: CartVi
     }
 
     override fun onBindViewHolder(holder: GoodsHolder, position: Int) {
-        calcSum()
         holder.bind(listGoods[position])
         itemPosition = position
     }
@@ -69,16 +64,16 @@ class GoodsInCartAdapter (private val view : View, private val viewModel: CartVi
 
             binding.ibMinus.setOnClickListener {
                 if(item.quantity.get() > 1){
-                    calcSum()
                     item.obsPrice.set(item.obsPrice.get() - item.price)
                     item.quantity.set(item.quantity.get() - 1)
+                    calcSum()
                 }
             }
 
             binding.ibPlus.setOnClickListener {
-                calcSum()
                 item.obsPrice.set(item.obsPrice.get() + item.price)
                 item.quantity.set(item.quantity.get() + 1)
+                calcSum()
             }
 
             binding.ibRemove.setOnClickListener {
