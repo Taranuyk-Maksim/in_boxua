@@ -19,8 +19,9 @@ import com.example.in_boxua.databinding.FragmentCartBinding
 import com.example.in_boxua.utils.DataSingleton
 import com.example.in_boxua.utils.InjectorUtils
 import com.example.in_boxua.utils.SumCalc
+import javax.inject.Inject
 
-class CartFragment: Fragment(){
+class CartFragment @Inject constructor(): Fragment(){
 
     private val factory = InjectorUtils.provideCartViewModelFactory()
     private val  viewModel by lazy {

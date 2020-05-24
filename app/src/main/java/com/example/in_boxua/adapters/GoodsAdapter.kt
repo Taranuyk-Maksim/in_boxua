@@ -10,6 +10,7 @@ import com.example.in_boxua.data.Goods
 import com.example.in_boxua.databinding.GoodsCardBinding
 import com.example.in_boxua.ui.goods.GoodsFragment
 import com.example.in_boxua.utils.FavoritesCallback
+import javax.inject.Inject
 
 class GoodsAdapter(private var fav : FavoritesCallback,var view : View) : RecyclerView.Adapter<GoodsAdapter.GoodsHolder>() {
 

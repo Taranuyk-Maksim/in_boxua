@@ -5,6 +5,7 @@ import com.example.in_boxua.data.GoodsRepository
 import com.example.in_boxua.ui.cart.CartViewModelFactory
 import com.example.in_boxua.ui.catalog.CatalogViewModelFactory
 import com.example.in_boxua.ui.favorites.FavoritesViewModelFactory
+import dagger.internal.InjectedFieldSignature
 
 object InjectorUtils {
     private val goodsRepository = GoodsRepository.getInstance(FakeDatabase.getInstance().goodsDao)
@@ -16,6 +17,7 @@ object InjectorUtils {
 
         return CartViewModelFactory(goodsRepository)
     }
+    
     fun provideFavoritesGoodsViewModelFactory(): FavoritesViewModelFactory {
 
         return FavoritesViewModelFactory(goodsRepository)

@@ -28,7 +28,6 @@ class GoodsRepository private constructor(private val goodsDao: FakeGoodsDao) {
     fun getCartList() = goodsDao.getCartList()
 
     companion object {
-
         @Volatile
         private var instance: GoodsRepository? = null
 

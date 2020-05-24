@@ -11,9 +11,7 @@ class FavoriteModel(private var viewModel: FavoritesViewModel) : FavoritesCallba
     override fun addFavorite(goods: Goods) {
         viewModel.addToFavorites(goods)
     }
-
     override fun removeFavorite(goods: Goods) {
         viewModel.removeFavorite(goods)
     }
-
 }
